@@ -1,0 +1,184 @@
+/* ==========================================================================
+   MISE & MUSE - FOOTER & REFINED THEME MODIFIERS
+   ========================================================================== */
+
+/* Main Editorial Footer */
+.site-footer {
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4 {
+  color: var(--text-main);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-bottom: 4rem;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-main);
+  line-height: 1;
+  width: fit-content;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-brand-name:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.footer-brand-name .brand-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  filter: none;
+  opacity: 1;
+}
+
+.footer-brand-name .brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-main);
+}
+
+.footer-brand-name .brand-tagline {
+  color: var(--body-text);
+}
+
+.footer-desc {
+  color: var(--body-text);
+  font-size: 0.92rem;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0;
+  color: var(--body-text);
+  font-size: 0.86rem;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.footer-contact-item:hover,
+a.footer-contact-item:focus-visible {
+  color: var(--primary);
+}
+
+.footer-address .ui-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.18rem;
+  color: #F29A7D;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+}
+
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus-visible {
+  color: #FFFFFF;
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.footer-socials svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-nav-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav-list a {
+  color: var(--body-text);
+  font-size: 0.88rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-list a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--body-text);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}

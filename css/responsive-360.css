@@ -1,0 +1,268 @@
+/* Mise & Muse — Mobile: designed and verified at 360 × 740 */
+@media screen and (max-width: 767px) {
+  :root {
+    --header-height: 68px;
+    --live-strip-height: 40px;
+  }
+
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-inline: 16px;
+  }
+
+  .main-nav,
+  .header-actions > :not(.mobile-toggle) {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    margin-inline-start: auto;
+  }
+
+  .section { padding-block: 3.5rem; }
+  .section-sm { padding-block: 2.5rem; }
+  .section-hero {
+    padding-top: calc(var(--header-height) + var(--live-strip-height) + 2rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .classes-grid,
+  .gift-packages-grid,
+  .chef-spotlight-grid,
+  .student-proof-grid,
+  .recipes-vault-grid,
+  .what-you-cook-grid,
+  .corporate-journey-grid,
+  .passport-grid,
+  .option-select-grid,
+  .social-login-grid,
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px;
+  }
+
+  /* Mobile reset: all cards return to 100% full-width stacked column */
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .what-you-cook-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :nth-child(3):last-child,
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .what-you-cook-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :last-child:nth-child(odd) {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .hero-grid,
+  .class-hero-grid,
+  .class-detail-layout,
+  .gift-builder-layout,
+  .dashboard-layout,
+  .auth-page-wrap,
+  .ticket-details-box,
+  .next-class-hero-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  form > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .hero-cta-group,
+  .footer-bottom,
+  .footer-bottom-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-group .btn { width: 100%; }
+  .form-control, .btn { min-height: 44px; }
+  .auth-form-pane { padding: 4.5rem 16px 2.5rem; }
+  .auth-media-pane { min-height: 240px; padding: 2rem 16px; }
+
+  .sig-dishes-tags {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sig-dish-tag {
+    width: fit-content;
+  }
+
+  .hotspot-popover {
+    position: absolute;
+    top: auto;
+    bottom: calc(100% + 12px);
+    left: var(--mobile-popover-left, 50%);
+    width: min(300px, calc(100vw - 40px));
+    transform: translateX(-50%) translateY(10px) scale(0.96);
+    text-align: center;
+    z-index: 20;
+  }
+
+  .hotspot-item:hover .hotspot-popover,
+  .hotspot-item.active .hotspot-popover {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  .class-rail-wrap {
+    margin-inline: 0;
+    padding-inline: 0;
+    padding-bottom: 0;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .class-rail-track {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .rail-card {
+    width: 100%;
+    max-width: 100%;
+    scroll-snap-align: none;
+  }
+
+  .cta-content {
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  .cta-content .btn {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .class-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .class-card-footer > div:last-child {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem !important;
+  }
+
+  .class-card-footer > div:last-child .btn {
+    width: 100%;
+  }
+
+  .class-hero-grid,
+  .hero-grid.hero-single-banner {
+    padding-top: 1.5rem;
+  }
+
+  .gift-builder-container,
+  .corp-builder-box {
+    padding: 1.25rem;
+  }
+
+  .gift-delivery-options,
+  .gift-preview-header,
+  .gift-preview-footer,
+  .corp-estimate-heading {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+  }
+
+  .gift-card-preview-wrap {
+    min-height: 0;
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .preview-voucher-code {
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+
+  .gift-preview-footer > * {
+    width: 100%;
+  }
+
+  .corp-builder-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .corp-builder-grid > *,
+  .corp-options-list > label,
+  .corp-details-column,
+  .corp-estimate-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .corp-options-list > label {
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .corp-estimate-card {
+    padding: 1.25rem !important;
+  }
+
+  .contact-content-grid,
+  .contact-form-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .contact-content-grid {
+    gap: 1.5rem !important;
+  }
+
+  .contact-form-card,
+  .contact-info-card,
+  .contact-map-copy {
+    padding: 1.5rem !important;
+    min-width: 0;
+  }
+
+  .contact-form-card .form-control,
+  .contact-form-card .btn,
+  .contact-info-stack,
+  .contact-info-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-form-card .btn {
+    padding-inline: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .contact-hours-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+}

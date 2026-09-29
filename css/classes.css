@@ -1,0 +1,1016 @@
+/* ==========================================================================
+   MISE & MUSE - CLASSES & CLASS DETAIL STYLES
+   ========================================================================== */
+
+/* Classes Discovery Layout */
+.classes-header-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Cuisine & Filter Pills Toolbar */
+.classes-filter-section {
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.classes-filter-section .filters-bar {
+  box-shadow: var(--card-shadow);
+}
+
+.filters-bar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--body-muted);
+  min-width: 80px;
+}
+
+.filter-pill {
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-pill.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.filter-select {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-row-secondary {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.difficulty-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.class-search-wrap {
+  flex: 0 1 320px;
+  width: min(100%, 320px);
+  max-width: 320px;
+  min-width: 260px;
+}
+
+#classSearchInput {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 0.55rem 1rem;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  outline: 0;
+  box-sizing: border-box;
+  font: 500 0.85rem/1.3 var(--font-sans);
+  appearance: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+#classSearchInput:hover {
+  border-color: color-mix(in srgb, var(--primary) 55%, var(--border-color));
+}
+
+#classSearchInput:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+#classSearchInput::placeholder {
+  color: var(--body-muted);
+  opacity: 0.85;
+}
+
+@media (max-width: 767px) {
+  .filter-row-secondary,
+  .difficulty-filter-group {
+    align-items: stretch;
+  }
+
+  .difficulty-filter-group,
+  .class-search-wrap,
+  .filter-select {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+}
+
+.classes-results-count {
+  font-size: 0.92rem;
+  color: var(--body-muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Standardized Class Card Grid */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.class-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+}
+
+.class-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: rgba(198, 83, 50, 0.4);
+}
+
+.class-card-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background-color: var(--oat);
+}
+
+.class-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.class-card:hover .class-card-img {
+  transform: scale(1.05);
+}
+
+.class-card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.class-card-badges .seat-pill,
+.class-card-badges .difficulty-pill {
+  min-height: 32px;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 3px 12px rgba(20, 13, 9, 0.32);
+  backdrop-filter: none;
+}
+
+.class-card-badges .seat-pill.status-available {
+  color: var(--primary-hover);
+  background: var(--primary-light);
+  border-color: color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+.class-card-badges .seat-pill.status-few {
+  color: var(--primary-hover);
+  background: var(--primary-light);
+  border-color: color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+.class-card-badges .seat-pill.status-full {
+  color: var(--primary-hover);
+  background: var(--primary-light);
+  border-color: color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+[data-theme="dark"] .class-card-badges .seat-pill.status-available,
+[data-theme="dark"] .class-card-badges .seat-pill.status-few,
+[data-theme="dark"] .class-card-badges .seat-pill.status-full {
+  color: #FFA588;
+  background: rgba(223, 121, 88, 0.22);
+  border-color: rgba(223, 121, 88, 0.42);
+}
+
+.class-card-badges .difficulty-pill,
+[data-theme="dark"] .class-card-badges .difficulty-pill {
+  color: #261d18;
+  background: #fffaf3;
+  border-color: rgba(38, 29, 24, 0.34);
+}
+
+.class-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.class-card-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--body-muted);
+  margin-bottom: 0.5rem;
+}
+
+.class-cuisine-tag {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.class-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  display: block;
+  width: 100%;
+  max-width: 20ch;
+  min-height: 2.5em;
+  text-wrap: balance;
+}
+
+.class-card-title a {
+  color: inherit;
+  display: block;
+}
+
+.class-card-title a > span,
+.class-skill-summary > span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.class-card-title a:hover {
+  color: var(--primary);
+}
+
+.class-skill-summary {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.class-details-mini {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--body-text);
+}
+
+.mini-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mini-detail-item svg {
+  color: var(--primary);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.class-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.class-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-amount {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.price-unit {
+  font-size: 0.75rem;
+  color: var(--body-muted);
+}
+
+/* Empty State */
+.classes-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--border-color);
+  grid-column: 1 / -1;
+}
+
+.empty-state-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   CLASS DETAIL HERO BANNER & ANIMATION SUITE
+   ========================================================================== */
+.class-hero {
+  position: relative;
+  background-color: #140C08;
+  color: #FFF9F1;
+  padding-top: calc(var(--header-height) + var(--live-strip-height) + 2.5rem);
+  padding-bottom: 5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated Ken Burns Background */
+.class-hero::before {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  background-image:
+    linear-gradient(90deg, rgba(20, 12, 8, 0.93) 0%, rgba(20, 12, 8, 0.78) 45%, rgba(20, 12, 8, 0.38) 75%, rgba(20, 12, 8, 0.65) 100%),
+    var(--class-hero-image, url('../images/classes/pasta-lab.jpg'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: classHeroKenBurns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes classHeroKenBurns {
+  0% { transform: scale(1) translate3d(0, 0, 0); }
+  50% { transform: scale(1.05) translate3d(-1%, -0.5%, 0); }
+  100% { transform: scale(1.08) translate3d(1%, -1%, 0); }
+}
+
+.class-hero > .container {
+  position: relative;
+  z-index: 3;
+}
+
+.class-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3.5rem;
+  align-items: center;
+  min-height: 440px;
+}
+
+/* Hero Content High-Contrast Visibility */
+.class-hero h1,
+.class-hero h1#heroDetailTitle {
+  color: #FFFFFF !important;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6);
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.class-hero .lead,
+.class-hero p#heroDetailSummary {
+  color: #F3EAE1 !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
+  max-width: 620px;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.class-hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  animation: heroSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.class-hero-badges .badge-primary {
+  background: var(--primary) !important;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(198, 83, 50, 0.4);
+}
+
+.class-hero-badges .seat-pill {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFF9F1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.class-hero-badges .seat-pill::before {
+  background-color: var(--primary-light) !important;
+  box-shadow: 0 0 6px var(--primary-light);
+}
+
+.class-hero-meta-bar {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #FFF9F1 !important;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.class-hero-meta-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFF9F1 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.class-hero-meta-bar .ui-icon {
+  width: 18px;
+  height: 18px;
+  color: #FFA588 !important;
+  flex-shrink: 0;
+}
+
+.class-hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.class-hero-img-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  background: rgba(20, 12, 8, 0.6);
+}
+
+.class-hero-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.class-hero-img-frame:hover .class-hero-featured-img {
+  transform: scale(1.05);
+}
+
+.class-hero-img-wrap {
+  display: none;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .class-hero {
+    padding-top: calc(var(--header-height) + var(--live-strip-height) + 2rem);
+    padding-bottom: 4rem;
+  }
+  .class-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(20, 12, 8, 0.72) 0%, rgba(20, 12, 8, 0.88) 55%, rgba(20, 12, 8, 0.97) 100%),
+      var(--class-hero-image, url('../images/classes/pasta-lab.jpg'));
+  }
+  .class-hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    align-content: center;
+    gap: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   CLASS DETAIL PAGE SCROLL REVEAL & MICRO-ANIMATIONS
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.32s; }
+
+/* Interactive Hover & Micro-animations */
+.cook-dish-card {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+.cook-dish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(28, 19, 15, 0.12);
+  border-color: rgba(198, 83, 50, 0.35);
+}
+.cook-dish-card .cook-dish-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cook-dish-card:hover .cook-dish-img {
+  transform: scale(1.06);
+}
+
+.technique-item {
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.technique-item:hover {
+  transform: translateX(6px);
+  background-color: var(--bg-surface);
+  box-shadow: 0 4px 12px rgba(28, 19, 15, 0.06);
+}
+
+.class-preparation-card {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+.class-preparation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: rgba(198, 83, 50, 0.3);
+}
+
+.booking-sidebar-card {
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+.booking-sidebar-card:hover {
+  box-shadow: 0 16px 36px rgba(28, 19, 15, 0.16);
+}
+
+/* Pulsing CTA Glow Animation */
+@keyframes ctaGlowPulse {
+  0% { box-shadow: 0 4px 14px rgba(198, 83, 50, 0.35); }
+  50% { box-shadow: 0 6px 24px rgba(198, 83, 50, 0.6); }
+  100% { box-shadow: 0 4px 14px rgba(198, 83, 50, 0.35); }
+}
+
+.booking-sidebar-card .btn-primary {
+  animation: ctaGlowPulse 3.2s ease-in-out infinite;
+}
+
+.class-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3.5rem;
+  align-items: start;
+  position: relative;
+}
+
+.class-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* What You'll Cook Visual Cards - Exactly 2 Cards with Equal Line Counts */
+.what-you-cook-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.cook-dish-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cook-dish-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.cook-dish-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-surface);
+}
+
+.cook-dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cook-dish-card:hover .cook-dish-img {
+  transform: scale(1.05);
+}
+
+.cook-dish-info {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cook-dish-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 1.35em;
+}
+
+.cook-dish-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--body-muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3.1em;
+}
+
+@media (max-width: 640px) {
+  .what-you-cook-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Techniques Grid */
+.techniques-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.technique-item {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 0.65rem;
+  background-color: var(--bg-surface);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--primary);
+  min-height: 112px;
+}
+
+.technique-copy {
+  width: 100%;
+  min-width: 0;
+  min-height: calc(1.45em * 3);
+  line-height: 1.45;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.technique-bullet {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Home 2 technique-of-the-month cards use matched title and copy rows. */
+.monthly-techniques-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.monthly-techniques-list .technique-item {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  align-content: start;
+  gap: 0.75rem;
+  min-width: 0;
+  min-height: 176px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.monthly-techniques-list .technique-bullet {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  border-radius: 50%;
+  background: var(--primary-light);
+}
+
+.monthly-technique-copy,
+.monthly-technique-title,
+.monthly-technique-desc {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.monthly-technique-title {
+  min-height: calc(1.4em * 2);
+  margin-bottom: 0.45rem;
+  line-height: 1.4;
+}
+
+.monthly-technique-desc {
+  min-height: calc(1.5em * 2);
+  color: var(--body-text);
+  line-height: 1.5;
+}
+
+.monthly-technique-title > span,
+.monthly-technique-desc > span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .monthly-techniques-list {
+    grid-template-columns: 1fr;
+  }
+
+  .monthly-techniques-list .technique-item {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .techniques-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.class-preparation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.class-preparation-card {
+  height: 100%;
+  background-color: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .class-preparation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Session Interactive Timeline */
+.session-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.session-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-step {
+  position: relative;
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 3px solid var(--primary);
+}
+
+.timeline-time {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--body-muted);
+}
+
+/* Sticky Booking Sidebar */
+.booking-sidebar-card {
+  position: sticky;
+  top: calc(var(--header-height) + var(--live-strip-height) + 1.5rem);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--card-hover-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.session-picker-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.session-radio-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.session-radio-option:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-surface);
+}
+
+.session-radio-option.selected {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* Mobile Sticky Bottom Booker */
+.mobile-sticky-booker {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 1.25rem;
+  z-index: 990;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Class Detail CTA Banner Styling */
+.cta-banner-full {
+  background-image: var(--banner-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cta-banner-full .cta-overlay {
+  background: radial-gradient(circle at center, rgba(20, 12, 8, 0.48) 0%, rgba(20, 12, 8, 0.84) 100%);
+}

@@ -1,0 +1,331 @@
+/* Mise & Muse — Tablet / iPad Mini: designed and verified at 768 × 1024 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-inline: 24px;
+  }
+
+  .main-nav,
+  .header-actions > :not(.mobile-toggle) {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    margin-inline-start: auto;
+  }
+
+  .classes-grid,
+  .gift-packages-grid,
+  .chef-spotlight-grid,
+  .student-proof-grid,
+  .recipes-vault-grid,
+  .what-you-cook-grid,
+  .corporate-journey-grid,
+  .passport-grid,
+  .option-select-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px;
+  }
+
+  /* iPad Mini (768px): In 3-grid sections with 2 columns, center the 3rd (last) card */
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :nth-child(3):last-child,
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc((100% - 24px) / 2) !important;
+  }
+
+  /* iPad Mini (768px): Classes page grid aligned one by one */
+  .page-classes .classes-grid,
+  #classesGridContainer {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  .page-classes .classes-grid > *,
+  #classesGridContainer > * {
+    grid-column: 1 / -1 !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .page-classes .class-card-media,
+  #classesGridContainer .class-card-media {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 380px !important;
+  }
+
+  /* Keep the class filters compact and aligned on tablet. */
+  .page-classes .filters-bar {
+    padding: 1.25rem !important;
+  }
+
+  .page-classes .filters-bar > .filter-row:first-child {
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+  }
+
+  .page-classes .filter-label {
+    min-width: auto !important;
+    flex: 0 0 auto;
+  }
+
+  .page-classes .filter-pill {
+    flex: 0 1 auto;
+    padding-inline: 0.65rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap;
+  }
+
+  .page-classes .filter-row-secondary {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.9fr);
+    gap: 1rem !important;
+    align-items: center !important;
+  }
+
+  .page-classes .difficulty-filter-group {
+    flex-wrap: nowrap !important;
+    gap: 0.75rem !important;
+  }
+
+  .page-classes .filter-select,
+  .page-classes .class-search-wrap {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .hero-grid,
+  .class-hero-grid,
+  .class-detail-layout,
+  .gift-builder-layout,
+  .dashboard-layout,
+  .auth-page-wrap {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .auth-media-pane { min-height: 300px; }
+
+  /* About Page (iPad Mini): Padding below hero banner & content before image grid */
+  .section-studio-architecture {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  .studio-architecture-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 3rem !important;
+  }
+
+  .studio-architecture-copy {
+    order: 2 !important;
+  }
+
+  .studio-architecture-media {
+    order: 1 !important;
+    min-height: clamp(340px, 50vw, 480px) !important;
+  }
+
+  /* iPad Mini (768px): Align footer grid two by two */
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 3rem 2.5rem !important;
+    align-items: start !important;
+  }
+
+  .footer-brand-col {
+    max-width: 100% !important;
+  }
+
+  /* iPad Mini (768px): Live Top Cooking Strip refinement */
+  .live-cooking-strip {
+    padding-inline: 16px !important;
+  }
+  .live-strip-content {
+    font-size: 0.76rem !important;
+    gap: 0.6rem !important;
+    max-width: 100% !important;
+  }
+  .live-strip-content > span:nth-child(2) {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  /* iPad Mini (768px): Schedule Page Upcoming Sessions Grid & Badges Fix */
+  .sessions-list-wrap {
+    gap: 1.5rem !important;
+  }
+
+  .session-strip-card {
+    display: grid !important;
+    grid-template-columns: 100px auto minmax(0, 1fr) 140px !important;
+    grid-template-rows: auto auto !important;
+    gap: 1rem 1.5rem !important;
+    align-items: center !important;
+    padding: 1.5rem 1.75rem !important;
+    text-align: left !important;
+    overflow: visible !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Child 1: Date Box Tile */
+  .session-strip-card > .session-date-box {
+    grid-column: 1 !important;
+    grid-row: 1 / 3 !important;
+    align-self: stretch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0.75rem 0.5rem !important;
+    width: 100% !important;
+    max-width: 100px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .session-strip-card .session-date-day {
+    font-size: 1.75rem !important;
+    line-height: 1 !important;
+  }
+
+  .session-strip-card .session-date-month {
+    font-size: 0.75rem !important;
+  }
+
+  .session-strip-card .session-date-time {
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Child 2: Main Session Info */
+  .session-strip-card > .session-info-main {
+    grid-column: 2 / 4 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    text-align: left !important;
+    min-width: 0 !important;
+  }
+
+  .session-strip-card .session-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .session-strip-card .session-chef-meta {
+    text-align: left !important;
+  }
+
+  /* Child 3: Difficulty Pill Container */
+  .session-strip-card > div:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+  }
+
+  .session-strip-card .difficulty-pill {
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Child 4: Capacity Indicator & Seat Badge */
+  .session-strip-card > .capacity-indicator {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    min-width: 200px !important;
+    max-width: 100% !important;
+  }
+
+  .session-strip-card .capacity-stats {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+  }
+
+  .session-strip-card .capacity-stats .seat-pill {
+    width: auto !important;
+    min-width: 88px !important;
+    padding: 0.25rem 0.65rem !important;
+    font-size: 0.76rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Child 5: Price & Book Class Button */
+  .session-strip-card > div:last-child {
+    grid-column: 4 !important;
+    grid-row: 1 / 3 !important;
+    align-self: center !important;
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+
+  .session-strip-card > div:last-child .btn {
+    white-space: nowrap !important;
+  }
+
+  /* iPad Mini (768px): Contact Page Grids aligned one by one */
+  .page-contact .contact-content-grid,
+  .contact-content-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 3rem !important;
+  }
+
+  .contact-form-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  .contact-form-card,
+  .contact-info-stack {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-map-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .contact-map-frame,
+  .contact-map-frame iframe {
+    min-height: 380px !important;
+  }
+}

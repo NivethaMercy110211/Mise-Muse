@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mise & Muse | Culinary Studio — Cook. Create. Gather.</title>
+  <meta name="description" content="A 2026 premium culinary experience platform. Chef-led hands-on cooking workshops, live seat availability, sensory discovery, and student recipe vault.">
+  
+  <!-- Favicon / Browser Icon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/editorial.css?v=6">
+  <link rel="stylesheet" href="css/classes.css?v=2">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="texture-grain">
+
+  <!-- Live "What's Cooking Next" Top Strip -->
+  <div class="live-cooking-strip" id="liveCookingStrip">
+    <div class="live-strip-content">
+      <span class="live-indicator"><span class="live-pulse"></span> Live Schedule</span>
+      <span>Italian Pasta Lab · Saturday · 4 seats remaining</span>
+      <a href="classes.html" class="live-strip-link">Reserve Seat →</a>
+    </div>
+  </div>
+
+  <!-- Sticky Editorial Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="headerBrandLogo" aria-label="Mise & Muse — Cook. Create. Gather. — Home">
+        <img src="assets/logo.png" alt="Mise & Muse" class="brand-logo-img">
+        <span class="brand-text">
+          <span class="brand-name">Mise <span class="brand-amp">&amp;</span> Muse</span>
+          <span class="brand-tagline">Cook. Create. Gather.</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home 1</a>
+        <a href="home-journey.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="classes.html" class="nav-link">Classes</a>
+        <a href="schedule.html" class="nav-link">Schedule</a>
+        <a href="gift-experiences.html" class="nav-link">Gift Experiences</a>
+        <a href="corporate-events.html" class="nav-link">Corporate</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <a href="dashboard.html" class="btn btn-primary btn-sm" id="btnHeaderMyClasses">Dashboard</a>
+        <a href="login.html" class="btn btn-outline btn-xs" style="display:none; @media(min-width:768px){display:inline-flex;}">Student Login</a>
+        
+        <!-- Theme Toggle -->
+        <button class="control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <!-- RTL/LTR Toggle -->
+        <button class="control-btn rtl-toggle-btn" aria-label="Toggle Direction" title="Toggle RTL/LTR Direction">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div>
+      <div class="drawer-header">
+        <a href="index.html" class="brand-logo" aria-label="Mise & Muse — Cook. Create. Gather. — Home">
+          <img src="assets/logo.png" alt="Mise & Muse" class="brand-logo-img">
+          <span class="brand-text">
+            <span class="brand-name">Mise <span class="brand-amp">&amp;</span> Muse</span>
+            <span class="brand-tagline">Cook. Create. Gather.</span>
+          </span>
+        </a>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html" class="nav-link active">Home 1 — Culinary Experience</a>
+        <a href="home-journey.html" class="nav-link">Home 2 — The Culinary Journey</a>
+        <a href="about.html" class="nav-link">About Our Kitchen</a>
+        <a href="classes.html" class="nav-link">Classes & Workshops</a>
+        <a href="schedule.html" class="nav-link">Live Schedule & Calendar</a>
+        <a href="gift-experiences.html" class="nav-link">Gift Experiences</a>
+        <a href="corporate-events.html" class="nav-link">Corporate Team Events</a>
+        <a href="contact.html" class="nav-link">Visit & Contact</a>
+        <a href="dashboard.html" class="nav-link" style="color:var(--primary); font-weight:700;">My Kitchen & Passport</a>
+      </nav>
+    </div>
+    <div class="drawer-footer">
+      <a href="login.html" class="btn btn-outline btn-sm" style="width:100%;">Student Login</a>
+      <div class="drawer-controls">
+        <button class="btn btn-outline btn-sm theme-toggle-btn" style="flex:1;">Theme</button>
+        <button class="btn btn-outline btn-sm rtl-toggle-btn" style="flex:1;">RTL / LTR</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 00 — HERO SECTION -->
+    <section class="section section-hero hero-editorial banner-hero" style="--banner-image: url('../assets/banners/home-hero.webp');">
+      <div class="container">
+        <div class="hero-grid hero-single-banner">
+          <div class="hero-content hero-blur-grid">
+            <span class="section-eyebrow">Chef-Led Culinary Studio</span>
+            <h1 class="hero-title">Come Hungry. <em>Leave Knowing How.</em></h1>
+            <p class="hero-lead">
+              Hands-on cooking workshops designed around real techniques, unforgettable dishes, and the joy of cooking together around a central island.
+            </p>
+            <div class="hero-cta-group">
+              <a href="classes.html" class="btn btn-primary btn-lg">Find a Class →</a>
+              <a href="about.html" class="btn btn-outline btn-lg">Explore the Studio</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 — WHAT'S COOKING (Horizontal Rail) -->
+    <section class="section bg-surface">
+      <div class="container">
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem;">
+          <div>
+            <span class="section-eyebrow">Live Workshop Drops</span>
+            <h2>What’s Cooking This Week</h2>
+            <p class="section-subtitle">Real-time seat availability across our intimate small-group culinary ateliers.</p>
+          </div>
+          <a href="classes.html" class="btn-link-editorial">
+            View Complete Experience Catalog
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="class-rail-wrap">
+          <div class="class-rail-track">
+            <!-- Card 1 -->
+            <div class="rail-card">
+              <article class="class-card">
+                <div class="class-card-media">
+                  <img src="images/classes/pasta-lab.jpg" alt="Italian Handcrafted Pasta" class="class-card-img">
+                  <div class="class-card-badges">
+                    <span class="seat-pill status-few">4 seats left</span>
+                    <span class="difficulty-pill" data-level="STARTER">
+                      <span class="difficulty-bars"><span class="difficulty-bar"></span><span class="difficulty-bar"></span><span class="difficulty-bar"></span></span>
+                      Starter
+                    </span>
+                  </div>
+                </div>
+                <div class="class-card-body">
+                  <div class="class-card-meta-top">
+                    <span class="class-cuisine-tag">Italian</span>
+                    <span>3.5 Hours</span>
+                  </div>
+                  <h3 class="class-card-title"><a href="class-detail.html?id=pasta-lab"><span>Handcrafted Pasta &amp;</span><span>Emulsion Lab</span></a></h3>
+                  <p class="class-skill-summary"><span>Master 00 flour hydration,</span><span>handmade tagliatelle, and silky</span><span>butter-sage emulsion.</span></p>
+                  <div class="class-card-footer">
+                    <div class="class-price">
+                      <span class="price-amount">$145</span>
+                      <span class="price-unit">per guest</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('pasta-lab')">Book Class</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rail-card">
+              <article class="class-card">
+                <div class="class-card-media">
+                  <img src="images/classes/spice-technique.jpg" alt="Modern Indian Coastal Spice" class="class-card-img">
+                  <div class="class-card-badges">
+                    <span class="seat-pill status-available">3 seats left</span>
+                    <span class="difficulty-pill" data-level="CONFIDENT">
+                      <span class="difficulty-bars"><span class="difficulty-bar"></span><span class="difficulty-bar"></span><span class="difficulty-bar"></span></span>
+                      Confident
+                    </span>
+                  </div>
+                </div>
+                <div class="class-card-body">
+                  <div class="class-card-meta-top">
+                    <span class="class-cuisine-tag">Indian</span>
+                    <span>4.0 Hours</span>
+                  </div>
+                  <h3 class="class-card-title"><a href="class-detail.html?id=spice-technique"><span>Coastal Spice &amp;</span><span>Charcoal Craft</span></a></h3>
+                  <p class="class-skill-summary"><span>Whole-spice bloom chemistry,</span><span>stone-ground kokum masala, and</span><span>flaky sourdough parottas.</span></p>
+                  <div class="class-card-footer">
+                    <div class="class-price">
+                      <span class="price-amount">$155</span>
+                      <span class="price-unit">per guest</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('spice-technique')">Book Class</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rail-card">
+              <article class="class-card">
+                <div class="class-card-media">
+                  <img src="images/classes/artisan-sourdough.jpg" alt="Wild Sourdough" class="class-card-img">
+                  <div class="class-card-badges">
+                    <span class="seat-pill status-few">1 seat left</span>
+                    <span class="difficulty-pill" data-level="SKILLED">
+                      <span class="difficulty-bars"><span class="difficulty-bar"></span><span class="difficulty-bar"></span><span class="difficulty-bar"></span></span>
+                      Skilled
+                    </span>
+                  </div>
+                </div>
+                <div class="class-card-body">
+                  <div class="class-card-meta-top">
+                    <span class="class-cuisine-tag">Baking</span>
+                    <span>4.5 Hours</span>
+                  </div>
+                  <h3 class="class-card-title"><a href="class-detail.html?id=artisan-sourdough"><span>Wild Sourdough &amp;</span><span>Laminated Brioche</span></a></h3>
+                  <p class="class-skill-summary"><span>Levain fermentation science,</span><span>coil folding, Dutch oven steam,</span><span>and honeycomb crumb.</span></p>
+                  <div class="class-card-footer">
+                    <div class="class-price">
+                      <span class="price-amount">$165</span>
+                      <span class="price-unit">per guest</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('artisan-sourdough')">Book Class</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="rail-card">
+              <article class="class-card">
+                <div class="class-card-media">
+                  <img src="images/classes/bangkok-street.jpg" alt="Thai Street Food" class="class-card-img">
+                  <div class="class-card-badges">
+                    <span class="seat-pill status-available">3 seats left</span>
+                    <span class="difficulty-pill" data-level="CONFIDENT">
+                      <span class="difficulty-bars"><span class="difficulty-bar"></span><span class="difficulty-bar"></span><span class="difficulty-bar"></span></span>
+                      Confident
+                    </span>
+                  </div>
+                </div>
+                <div class="class-card-body">
+                  <div class="class-card-meta-top">
+                    <span class="class-cuisine-tag">Thai</span>
+                    <span>3.5 Hours</span>
+                  </div>
+                  <h3 class="class-card-title"><a href="class-detail.html?id=bangkok-street-lab"><span>Bangkok Market:</span><span>Wok Breath &amp; Balance</span></a></h3>
+                  <p class="class-skill-summary"><span>Master five Thai flavor pillars,</span><span>high-flame wok control, and</span><span>balanced street-food sauces.</span></p>
+                  <div class="class-card-footer">
+                    <div class="class-price">
+                      <span class="price-amount">$140</span>
+                      <span class="price-unit">per guest</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('bangkok-street-lab')">Book Class</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — CHOOSE YOUR CULINARY MOOD (Asymmetric Editorial Tiles) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Cuisine Explorer</span>
+          <h2>Choose Your Culinary Mood</h2>
+          <p class="section-subtitle">Immerse your senses in distinct culinary traditions through technique-driven kitchen practices.</p>
+        </div>
+
+        <div class="mood-tiles-grid">
+          <a href="classes.html?cuisine=Italian" class="mood-tile mood-tile-1">
+            <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=1000&auto=format&fit=crop" alt="Italian Cuisine" class="mood-tile-bg">
+            <div class="mood-tile-content">
+              <span class="mood-tile-cuisine">Italian Atelier</span>
+              <h3 class="mood-tile-title">Pasta, Emulsion & Simplicity</h3>
+              <p class="mood-tile-sub">Learn how five raw ingredients create transcendent flavors through heat and movement.</p>
+            </div>
+          </a>
+
+          <a href="classes.html?cuisine=Indian" class="mood-tile mood-tile-2">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800&auto=format&fit=crop" alt="Indian Cuisine" class="mood-tile-bg">
+            <div class="mood-tile-content">
+              <span class="mood-tile-cuisine">Indian Masterclasses</span>
+              <h3 class="mood-tile-title">Spice Chemistry & Fire</h3>
+              <p class="mood-tile-sub">Tempering oil dynamics, whole spice blooming, and stone-ground curries.</p>
+            </div>
+          </a>
+
+          <a href="classes.html?cuisine=Baking" class="mood-tile mood-tile-3">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop" alt="Baking Workshop" class="mood-tile-bg">
+            <div class="mood-tile-content">
+              <span class="mood-tile-cuisine">The Bakery Lab</span>
+              <h3 class="mood-tile-title">Precision, Levain & Patience</h3>
+              <p class="mood-tile-sub">Wild yeast fermentation, crumb architecture, and laminated doughs.</p>
+            </div>
+          </a>
+
+          <a href="classes.html?cuisine=Thai" class="mood-tile mood-tile-4">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=800&auto=format&fit=crop" alt="Thai Cuisine" class="mood-tile-bg">
+            <div class="mood-tile-content">
+              <span class="mood-tile-cuisine">Southeast Asian Atelier</span>
+              <h3 class="mood-tile-title">Wok Breath, Heat & Balance</h3>
+              <p class="mood-tile-sub">Harmonizing fiery chilies, sweet palm sugars, sour tamarinds, and salty fish sauce.</p>
+            </div>
+          </a>
+
+          <a href="classes.html?cuisine=Continental" class="mood-tile mood-tile-5">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Continental Cuisine" class="mood-tile-bg">
+            <div class="mood-tile-content">
+              <span class="mood-tile-cuisine">Continental Classics</span>
+              <h3 class="mood-tile-title">French Pan Sauces & Sear Precision</h3>
+              <p class="mood-tile-sub">Fond deglazing, velvety veloutés, and protein resting temperatures.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — SIGNATURE EXPERIENCES (Varied Split Layouts) -->
+    <section class="section bg-surface">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Curated Programs</span>
+          <h2>Signature Culinary Experiences</h2>
+          <p class="section-subtitle">Extended, immersive formats focusing on complete mastery of iconic culinary traditions.</p>
+        </div>
+
+        <!-- Experience 1 -->
+        <div class="signature-experience-item">
+          <div class="sig-media">
+            <img src="https://images.unsplash.com/photo-1556761223-4c4282c73f77?q=80&w=1000&auto=format&fit=crop" alt="Handmade Pasta Night" class="sig-img">
+          </div>
+          <div class="sig-content">
+            <span class="badge badge-primary">Evening Immersion</span>
+            <h3 style="font-size:2.2rem;">Handmade Pasta Night: Flour to Feast</h3>
+            <p class="lead">
+              You will never buy boxed dry noodles again. Step into our pasta studio to touch, knead, sheet, and shape authentic regional pastas from scratch.
+            </p>
+            <div class="sig-dishes-tags">
+              <span class="sig-dish-tag">Tagliatelle al Tartufo</span>
+              <span class="sig-dish-tag">Agnolotti dal Plin</span>
+              <span class="sig-dish-tag">Mantecatura Technique</span>
+            </div>
+            <div style="margin-top:0.5rem;">
+              <button class="btn btn-primary" onclick="window.openBookingModal('pasta-lab')">Book Experience — $145</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="signature-experience-item">
+          <div class="sig-media">
+            <img src="https://images.unsplash.com/photo-1618449840665-9ed506d73a34?q=80&w=1000&auto=format&fit=crop" alt="Indian Regional Table" class="sig-img">
+          </div>
+          <div class="sig-content">
+            <span class="badge badge-primary">Sensory Journey</span>
+            <h3 style="font-size:2.2rem;">The Indian Regional Table & Live Charcoal</h3>
+            <p class="lead">
+              Explore the nuanced regional flavor geography of India—from the coastal kokum curries of the south to slow-roasted dum preparations of the north.
+            </p>
+            <div class="sig-dishes-tags">
+              <span class="sig-dish-tag">Malabar Prawn & Kokum</span>
+              <span class="sig-dish-tag">Flaky Laminated Parotta</span>
+              <span class="sig-dish-tag">Live Dhungar Charcoal Smoke</span>
+            </div>
+            <div style="margin-top:0.5rem;">
+              <button class="btn btn-primary" onclick="window.openBookingModal('spice-technique')">Book Experience — $155</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — INSIDE THE KITCHEN (Interactive Hotspots) -->
+    <section class="section bg-espresso text-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Studio Architecture</span>
+          <h2>Inside the Mise & Muse Kitchen</h2>
+          <p class="section-subtitle" style="color:var(--oat);">
+            A purposefully designed space combining commercial-grade power with warm residential hospitality.
+          </p>
+        </div>
+
+        <div class="kitchen-blueprint-wrap">
+          <img src="assets/studio-architecture.jpg" alt="Mise & Muse luxury studio kitchen interior and culinary architecture" class="kitchen-blueprint-img">
+
+          <!-- Hotspot 1: Central Island -->
+          <div class="hotspot-item" style="top: 58%; left: 48%;">
+            <button class="hotspot-pin" aria-label="Central Cooking Island">1</button>
+            <div class="hotspot-popover">
+              <h4 class="hotspot-popover-title">Central Atelier Island</h4>
+              <p style="margin:0; font-size:0.82rem;">12 individual butcher block workstations with induction hobs and Japanese Santoku cutlery.</p>
+            </div>
+          </div>
+
+          <!-- Hotspot 2: High BTU Wok Station -->
+          <div class="hotspot-item" style="top: 52%; left: 88%;">
+            <button class="hotspot-pin" aria-label="Wok & Live Fire Station">2</button>
+            <div class="hotspot-popover">
+              <h4 class="hotspot-popover-title">Live Flame & Wok Range</h4>
+              <p style="margin:0; font-size:0.82rem;">100k BTU burner bays delivering genuine wok hei for our Southeast Asian and stir-fry workshops.</p>
+            </div>
+          </div>
+
+          <!-- Hotspot 3: Stone Baking Deck -->
+          <div class="hotspot-item" style="top: 48%; left: 11%;">
+            <button class="hotspot-pin" aria-label="Artisan Bakery Deck">3</button>
+            <div class="hotspot-popover">
+              <h4 class="hotspot-popover-title">Deck Ovens & Proofer</h4>
+              <p style="margin:0; font-size:0.82rem;">Refractory stone deck ovens capable of 900°F pizza baking and injected steam sourdough expansion.</p>
+            </div>
+          </div>
+
+          <!-- Hotspot 4: Communal Gathering Table -->
+          <div class="hotspot-item" style="top: 80%; left: 24%;">
+            <button class="hotspot-pin" aria-label="Communal Gathering Table">4</button>
+            <div class="hotspot-popover">
+              <h4 class="hotspot-popover-title">The Long Table</h4>
+              <p style="margin:0; font-size:0.82rem;">Reclaimed solid walnut table where students sit with their chef to dine, toast, and share stories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — YOUR EVENING AT MISE & MUSE (Horizontal Journey) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">The Experience</span>
+          <h2>Your Evening at Mise & Muse</h2>
+          <p class="section-subtitle">From the moment you tie your apron to the final shared toast.</p>
+        </div>
+
+        <div class="journey-track">
+          <div class="journey-step">
+            <div class="journey-step-num">1</div>
+            <h4 class="journey-step-title">Arrive</h4>
+            <p class="journey-step-desc">Welcome drink, sensory ingredient introduction, and apron fitting.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-num">2</div>
+            <h4 class="journey-step-title">Meet Chef</h4>
+            <p class="journey-step-desc">Technique breakdown, safety overview, and flavor mapping.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-num">3</div>
+            <h4 class="journey-step-title">Prep</h4>
+            <p class="journey-step-desc">Knife work precision, station mise en place, and dough kneading.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-num">4</div>
+            <h4 class="journey-step-title">Cook</h4>
+            <p class="journey-step-desc">Live heat mastery, emulsion bonding, and sauce reduction.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-num">5</div>
+            <h4 class="journey-step-title">Plate</h4>
+            <p class="journey-step-desc">Professional plating composition and garnish balancing.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-num">6</div>
+            <h4 class="journey-step-title">Gather</h4>
+            <p class="journey-step-desc">Sit at the communal table to enjoy your feast with curated pairings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — MEET THE CHEFS (Editorial Chef Cards) -->
+    <section class="section bg-surface">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Culinary Mentors</span>
+          <h2>Meet the Chefs</h2>
+          <p class="section-subtitle">Passionate culinary professionals who teach technique, philosophy, and kitchen instincts.</p>
+        </div>
+
+        <div class="chef-spotlight-grid">
+          <!-- Chef 1 -->
+          <article class="chef-spotlight-card">
+            <div class="chef-card-media">
+              <img src="assets/chefs/chef-marco.jpg" alt="Chef Marco Rossi" class="chef-card-img" loading="lazy">
+            </div>
+            <div class="chef-card-body">
+              <span class="chef-specialty">Italian Pasta & Regional Emulsions</span>
+              <h3 class="chef-name">Marco Rossi</h3>
+              <div class="chef-signature-tech">
+                <strong>Signature Technique:</strong> Zero-stretch dowel rolling & 57% pasta hydration balance.
+              </div>
+              <p class="chef-bio"><span>Trained in Bologna and Modena,</span><span>Marco brings 15 years of handmade</span><span>pasta expertise to our central island.</span></p>
+              <button class="btn btn-outline btn-sm" onclick="window.openBookingModal('pasta-lab')">Book with Chef Marco</button>
+            </div>
+          </article>
+
+          <!-- Chef 2 -->
+          <article class="chef-spotlight-card">
+            <div class="chef-card-media">
+              <img src="assets/chefs/chef-priya.jpg" alt="Chef Priya Sharma" class="chef-card-img" loading="lazy">
+            </div>
+            <div class="chef-card-body">
+              <span class="chef-specialty">Indian Regional Spices & Coastal Curries</span>
+              <h3 class="chef-name">Priya Sharma</h3>
+              <div class="chef-signature-tech">
+                <strong>Signature Technique:</strong> Multi-tiered Tadka dynamics & live charcoal smoke infusion.
+              </div>
+              <p class="chef-bio"><span>Priya turns complex Indian spices</span><span>into intuitive ratios that elevate</span><span>confident home cooking forever.</span></p>
+              <button class="btn btn-outline btn-sm" onclick="window.openBookingModal('spice-technique')">Book with Chef Priya</button>
+            </div>
+          </article>
+
+          <!-- Chef 3 -->
+          <article class="chef-spotlight-card">
+            <div class="chef-card-media">
+              <img src="assets/chefs/chef-camille.jpg" alt="Chef Camille Laurent" class="chef-card-img" loading="lazy">
+            </div>
+            <div class="chef-card-body">
+              <span class="chef-specialty">Artisan Fermentation & French Sauces</span>
+              <h3 class="chef-name">Camille Laurent</h3>
+              <div class="chef-signature-tech">
+                <strong>Signature Technique:</strong> Bassinage hydration incorporation & fond deglazing.
+              </div>
+              <p class="chef-bio"><span>Former Parisian baker and saucier,</span><span>Camille makes baking chemistry and</span><span>mother sauces accessible to all.</span></p>
+              <button class="btn btn-outline btn-sm" onclick="window.openBookingModal('artisan-sourdough')">Book with Chef Camille</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — FROM THE KITCHEN (Asymmetric Moments Gallery) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Documentary Moments</span>
+          <h2>From the Kitchen</h2>
+          <p class="section-subtitle">Real moments captured during our participatory cooking sessions.</p>
+        </div>
+
+        <div class="moments-gallery-grid">
+          <div class="moment-item moment-1">
+            <img src="assets/moments/moment-knead.jpg" alt="Hands kneading rustic sourdough bread dough on a flour-dusted wooden counter" class="moment-img" loading="lazy">
+            <span class="moment-label">Flour Hydration & Knead</span>
+          </div>
+          <div class="moment-item moment-2">
+            <img src="assets/moments/moment-herbs.jpg" alt="Chef precisely chopping fresh culinary herbs on a wooden cutting board" class="moment-img" loading="lazy">
+            <span class="moment-label">Knife Work & Herb Prep</span>
+          </div>
+          <div class="moment-item moment-3">
+            <img src="assets/moments/moment-plating.jpg" alt="Chef delicately drizzling rich reduction sauce onto roasted duck breast" class="moment-img" loading="lazy">
+            <span class="moment-label">Precision Sauce Plating</span>
+          </div>
+          <div class="moment-item moment-4">
+            <img src="assets/moments/moment-dining.jpg" alt="Gathering of students and guests laughing and toasting around the long dinner table" class="moment-img" loading="lazy">
+            <span class="moment-label">Gathering at the Long Table</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 — WHAT STUDENTS COOKED (Social Proof) -->
+    <section class="section bg-surface">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Student Creations</span>
+          <h2>What Students Cooked</h2>
+          <p class="section-subtitle">Real plates cooked by our students during their first session.</p>
+        </div>
+
+        <div class="student-proof-grid">
+          <div class="student-proof-card">
+            <div class="proof-media">
+              <img src="assets/students/student-tagliatelle.jpg" alt="Student handmade tagliatelle with rich ragù and parmigiano" class="proof-img" loading="lazy">
+            </div>
+            <div class="proof-body">
+              <p class="proof-quote">“I’ve tried making pasta at home for three years. In two hours with Chef Marco, I finally understood the tactile feel of dough hydration.”</p>
+              <div class="proof-author">
+                <strong>Julian M.</strong>
+                <span>Pasta Atelier</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="student-proof-card">
+            <div class="proof-media">
+              <img src="assets/students/student-sourdough.jpg" alt="Student freshly sliced artisan sourdough loaf showing open crumb" class="proof-img" loading="lazy">
+            </div>
+            <div class="proof-body">
+              <p class="proof-quote">“The recipe vault and chef notes after the class made baking this loaf at home just as successful as in the studio.”</p>
+              <div class="proof-author">
+                <strong>Sophia K.</strong>
+                <span>Sourdough Lab</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="student-proof-card">
+            <div class="proof-media">
+              <img src="assets/students/student-curry.jpg" alt="Student coastal curry with dhungar charcoal smoke and garlic naan" class="proof-img" loading="lazy">
+            </div>
+            <div class="proof-body">
+              <p class="proof-quote">“The dhungar charcoal smoke technique blew our minds. An unforgettable date night experience.”</p>
+              <div class="proof-author">
+                <strong>Marcus & Claire</strong>
+                <span>Spice & Charcoal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 — FINAL DRAMATIC CTA BANNER -->
+    <section class="container">
+      <div class="cta-banner-full" role="img" aria-label="Warmly lit Mise & Muse culinary studio prepared for a shared dinner" style="background-image: url('assets/banners/home-cta.webp'); --banner-image: url('assets/banners/home-cta.webp');">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+          <span class="section-eyebrow" style="color:var(--primary-light);">Your Next Favorite Dish</span>
+          <h2>Your Next Favorite Dish Starts Here.</h2>
+          <p>Book a single seat, bring a friend, or gather your team for an unforgettable hands-on kitchen workshop.</p>
+          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="classes.html" class="btn btn-primary btn-lg">Browse Upcoming Classes →</a>
+            <a href="gift-experiences.html" class="btn btn-outline-white btn-lg">Gift an Experience</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Main Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-name brand-logo" aria-label="Mise & Muse — Cook. Create. Gather. — Home">
+            <img src="assets/logo.png" alt="Mise & Muse" class="brand-logo-img">
+            <span class="brand-text">
+              <span class="brand-name">Mise <span class="brand-amp">&amp;</span> Muse</span>
+              <span class="brand-tagline">Cook. Create. Gather.</span>
+            </span>
+          </a>
+          <p class="footer-desc">
+            A 2026 contemporary culinary studio dedicated to technique-driven workshops, sensory discovery, and communal dining.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-nav-title">Experiences</h4>
+          <ul class="footer-nav-list">
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="classes.html?cuisine=Italian">Italian Pasta Lab</a></li>
+            <li><a href="classes.html?cuisine=Indian">Indian Coastal Spice</a></li>
+            <li><a href="classes.html?cuisine=Baking">Artisan Sourdough</a></li>
+            <li><a href="classes.html?cuisine=Thai">Bangkok Street Food</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-nav-title">Studio</h4>
+          <ul class="footer-nav-list">
+            <li><a href="about.html">Our Kitchen</a></li>
+            <li><a href="schedule.html">Live Calendar</a></li>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
+            <li><a href="gift-experiences.html">Gift Experiences</a></li>
+            <li><a href="contact.html">Contact & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-nav-title">Student Portal</h4>
+          <ul class="footer-nav-list">
+            <li><a href="dashboard.html#vault">Recipe Vault</a></li>
+            <li><a href="dashboard.html#passport">Taste Passport</a></li>
+            <li><a href="login.html">Student Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Mise & Muse Culinary Studio. All rights reserved. Cook. Create. Gather.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Workshop</a>
+          <a href="#">Allergen Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/state.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/booking-modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

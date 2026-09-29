@@ -1,0 +1,946 @@
+/* ==========================================================================
+   MISE & MUSE - DARK THEME (Intimate Evening Culinary Studio)
+   High-Contrast WCAG-Compliant Master Theme
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Dark Mode Palette Tokens */
+  --bg-main: #14110F;
+  --bg-surface: #1E1916;
+  --bg-card: #27211D;
+  --bg-subtle: #332B25;
+  --border: #4A3E36;
+  --border-color: #4A3E36;
+  
+  /* Text Tokens - High Contrast & Warmth */
+  --text-main: #FFF9F1;
+  --text-body: #E2D7CC;
+  --body-text: #D5CBC0;       /* CRITICAL FIX: Overrides light-mode #6B625B */
+  --body-muted: #B8ADA0;      /* CRITICAL FIX: Overrides low-contrast #A89D92 */
+  
+  /* Brand Accents */
+  --primary: #DF7958;
+  --primary-hover: #E88C6E;
+  --primary-light: #FFC0AD;   /* CRITICAL FIX: Solid bright peach text token, not 15% transparent */
+  --primary-glow: rgba(223, 121, 88, 0.3);
+  --primary-tint: rgba(223, 121, 88, 0.2);
+
+  --espresso: #27211D;
+  --warm-cream: #FFF9F1;
+  --oat: #CDC3B8;             /* CRITICAL FIX: High-contrast warm off-white for text/subtitles */
+  --soft-surface: #1E1916;
+
+  --card-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.65);
+  --card-hover-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.85);
+
+  --status-avail-bg: rgba(223, 121, 88, 0.22);
+  --status-avail-text: #FFA588;
+  --status-few-bg: rgba(223, 121, 88, 0.22);
+  --status-few-text: #FFA588;
+  --status-full-bg: rgba(223, 121, 88, 0.22);
+  --status-full-text: #FFA588;
+}
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY & SUBTITLES
+   ========================================================================== */
+[data-theme="dark"] body {
+  background-color: var(--bg-main);
+  color: var(--text-body);
+}
+
+[data-theme="dark"] p {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .lead {
+  color: #EAE0D5;
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: #CDC3B8 !important;
+}
+
+[data-theme="dark"] .section-eyebrow {
+  color: #FFA588 !important;
+}
+
+[data-theme="dark"] strong {
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   HERO BANNER & FROSTED GLASS (Home 1 & Home 2)
+   ========================================================================== */
+[data-theme="dark"] .banner-hero {
+  position: relative;
+}
+
+[data-theme="dark"] .banner-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 11, 9, 0.65) 0%,
+    rgba(14, 11, 9, 0.42) 50%,
+    rgba(14, 11, 9, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+[data-theme="dark"] .banner-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Frosted glass container on Home 1 and Home 2 hero banners */
+[data-theme="dark"] .hero-blur-grid {
+  background-color: rgba(25, 21, 18, 0.85);
+  border: 1px solid rgba(223, 121, 88, 0.38);
+  background-image:
+    linear-gradient(rgba(223, 121, 88, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(223, 121, 88, 0.1) 1px, transparent 1px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .hero-blur-grid::before {
+  background: linear-gradient(135deg, rgba(223, 121, 88, 0.14), transparent 55%);
+}
+
+[data-theme="dark"] .hero-blur-grid .section-eyebrow {
+  color: #FFA588;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .hero-blur-grid .hero-title {
+  color: #FFF9F1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .hero-blur-grid .hero-title em {
+  color: #FFA588;
+  font-style: italic;
+}
+
+[data-theme="dark"] .hero-blur-grid .hero-lead {
+  color: #E6DCD2;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .hero-blur-grid .btn-outline {
+  color: #FFF9F1;
+  border-color: rgba(255, 249, 241, 0.4);
+  background: rgba(39, 33, 29, 0.78);
+}
+
+[data-theme="dark"] .hero-blur-grid .btn-outline:hover {
+  color: #FFFFFF;
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+@media (max-width: 767px) {
+  [data-theme="dark"] .hero-blur-grid {
+    background-color: rgba(22, 18, 16, 0.94);
+  }
+}
+
+/* ==========================================================================
+   CURRICULUM LEVEL CARDS & DIFFICULTY (Home 2)
+   ========================================================================== */
+[data-theme="dark"] .difficulty-pill {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .difficulty-bar {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+[data-theme="dark"] .curriculum-level-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .curriculum-level-card--starter,
+[data-theme="dark"] .curriculum-level-card--confident,
+[data-theme="dark"] .curriculum-level-card--skilled {
+  border-top-color: var(--primary);
+}
+
+[data-theme="dark"] .curriculum-level-body p {
+  color: var(--body-text) !important;
+}
+
+[data-theme="dark"] .curriculum-level-list {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .curriculum-level-list li {
+  color: #D5CBC0;
+}
+
+[data-theme="dark"] .curriculum-level-media,
+[data-theme="dark"] .take-home-media,
+[data-theme="dark"] .class-card-media,
+[data-theme="dark"] .next-class-media {
+  background-color: #1E1916;
+}
+
+[data-theme="dark"] .take-home-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .take-home-body h4 {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .take-home-body p {
+  color: var(--body-text) !important;
+}
+
+/* ==========================================================================
+   SIGNATURE EXPERIENCES & TECHNIQUES
+   ========================================================================== */
+[data-theme="dark"] .sig-dish-tag {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFF9F1;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .technique-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--primary);
+}
+
+[data-theme="dark"] .technique-item div {
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .technique-item strong {
+  color: var(--text-main);
+}
+
+/* Hotspots */
+[data-theme="dark"] .hotspot-popover {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .hotspot-popover-title {
+  color: #FFA588;
+}
+
+/* Chef Spotlight & Stories */
+[data-theme="dark"] .chef-spotlight-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .chef-signature-tech {
+  background-color: var(--bg-surface);
+  border-left-color: var(--primary);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .chef-bio {
+  color: var(--body-text);
+}
+
+[data-theme="dark"] .student-proof-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .proof-quote {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .proof-author {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .proof-author strong {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   BUTTONS & ACTION CONTROLS
+   ========================================================================== */
+[data-theme="dark"] :where(.btn-outline, .social-login-btn, .filter-pill, .control-btn) {
+  color: var(--text-main);
+  border-color: #54473F;
+  background-color: var(--bg-card);
+}
+
+[data-theme="dark"] :where(.btn-outline, .social-login-btn, .filter-pill, .control-btn):hover {
+  color: #FFFFFF;
+  border-color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 22%, var(--bg-card));
+}
+
+[data-theme="dark"] .btn-outline-white {
+  color: #FFF9F1;
+  border-color: rgba(255, 249, 241, 0.5);
+}
+
+[data-theme="dark"] .btn-outline-white:hover {
+  background-color: #FFF9F1;
+  color: #14110F;
+  border-color: #FFF9F1;
+}
+
+[data-theme="dark"] .btn-espresso {
+  background-color: #382F2A;
+  color: #FFF9F1;
+  border-color: #55473F;
+}
+
+[data-theme="dark"] .btn-espresso:hover {
+  background-color: #4A3E37;
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .btn-ghost {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-ghost:hover {
+  color: var(--primary-hover);
+}
+
+[data-theme="dark"] .student-profile-chip {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .student-profile-chip:hover {
+  border-color: var(--primary);
+  background-color: rgba(223, 121, 88, 0.22);
+}
+
+/* ==========================================================================
+   FORMS, INPUTS & SELECTS
+   ========================================================================== */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] select,
+[data-theme="dark"] .filter-select {
+  background-color: #1E1916;
+  border-color: var(--border-color);
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] .filter-select:focus {
+  background-color: #27211D;
+  border-color: var(--primary);
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] option {
+  background-color: #27211D;
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] :where(input, select, textarea)::placeholder {
+  color: #A09488;
+  opacity: 1;
+}
+
+[data-theme="dark"] .form-hint {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .auth-form-pane {
+  background-color: var(--bg-main);
+}
+
+[data-theme="dark"] .auth-divider {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .auth-divider::before,
+[data-theme="dark"] .auth-divider::after {
+  background-color: var(--border-color);
+}
+
+/* ==========================================================================
+   CLASSES DISCOVERY & CATALOG
+   ========================================================================== */
+[data-theme="dark"] .filters-bar {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .filter-label {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .filter-pill {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .filter-pill:hover {
+  border-color: var(--primary);
+  color: #FFF9F1;
+  background-color: rgba(223, 121, 88, 0.2);
+}
+
+[data-theme="dark"] .filter-pill.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .classes-results-count {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .class-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .class-card-meta-top {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .class-skill-summary {
+  color: var(--body-text);
+}
+
+[data-theme="dark"] .class-details-mini {
+  color: var(--body-text);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .price-amount {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .price-unit {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .classes-empty-state {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+/* Class Detail Page */
+[data-theme="dark"] .booking-sidebar-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-price-header {
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .session-radio-option {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .session-radio-option:hover {
+  border-color: var(--primary);
+  background-color: #352C26;
+}
+
+[data-theme="dark"] .session-radio-option.selected {
+  border-color: var(--primary);
+  background-color: rgba(223, 121, 88, 0.22);
+}
+
+[data-theme="dark"] .cook-dish-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .cook-dish-desc {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .timeline-step::before {
+  background-color: var(--bg-card);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .timeline-desc {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .session-timeline::before {
+  background-color: var(--border-color);
+}
+
+/* ==========================================================================
+   SCHEDULE & CALENDAR
+   ========================================================================== */
+[data-theme="dark"] .view-toggle-wrap {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .view-toggle-btn {
+  color: #CDC3B8;
+}
+
+[data-theme="dark"] .view-toggle-btn.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .session-strip-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .session-date-box {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .session-date-month {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .session-date-time {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .session-title {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .session-chef-meta {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .capacity-bar-track {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .calendar-view-container {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .calendar-days-header {
+  color: var(--body-muted);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .calendar-days-grid {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .cal-day-cell {
+  background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .cal-day-cell.other-month {
+  background-color: var(--bg-surface);
+  opacity: 0.35;
+}
+
+[data-theme="dark"] .cal-day-num {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .cal-session-chip {
+  background-color: #352C26;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--primary);
+}
+
+[data-theme="dark"] .cal-chip-title {
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] .cal-chip-seats {
+  color: #FFA588;
+}
+
+/* ==========================================================================
+   STUDENT DASHBOARD & PASSPORT
+   ========================================================================== */
+[data-theme="dark"] .portal-view-head {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .portal-view-head::after {
+  color: #FFF9F1;
+  background-color: rgba(198, 83, 50, 0.28);
+  border-color: rgba(255, 165, 136, 0.58);
+}
+
+[data-theme="dark"] .portal-view-head p {
+  color: var(--body-text) !important;
+}
+
+[data-theme="dark"] .dashboard-sidebar {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dashboard-sidebar > p {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .dash-nav-item {
+  color: var(--body-text);
+}
+
+[data-theme="dark"] .dash-nav-item:hover {
+  background-color: var(--bg-surface);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .dash-nav-item.active {
+  background-color: rgba(223, 121, 88, 0.22);
+  color: #FFA588;
+}
+
+[data-theme="dark"] .student-avatar {
+  background-color: rgba(223, 121, 88, 0.2);
+  color: #FFA588;
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .next-class-hero-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .what-to-bring-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--primary);
+  color: var(--text-body);
+}
+
+[data-theme="dark"] .taste-passport-card {
+  background: linear-gradient(135deg, #1C1714 0%, #2A231E 100%);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .passport-stamp {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .passport-stamp.unlocked {
+  background-color: rgba(223, 121, 88, 0.2);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .stamp-icon {
+  color: #FFA588;
+}
+
+[data-theme="dark"] .stamp-cuisine {
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] .stamp-status {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .recipe-vault-card,
+[data-theme="dark"] .chef-note-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .recipe-title {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .note-category-badge {
+  background-color: rgba(223, 121, 88, 0.2);
+  color: #FFA588;
+  border: 1px solid rgba(223, 121, 88, 0.4);
+}
+
+[data-theme="dark"] .dashboard-account-trigger {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .dashboard-account-menu {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dashboard-account-menu a,
+[data-theme="dark"] .dashboard-account-menu button {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .dashboard-account-menu a:hover,
+[data-theme="dark"] .dashboard-account-menu button:hover {
+  background-color: rgba(223, 121, 88, 0.18);
+  color: #FFA588;
+}
+
+/* ==========================================================================
+   BOOKING MODAL & FLOW
+   ========================================================================== */
+[data-theme="dark"] .booking-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+[data-theme="dark"] .booking-modal-container {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .booking-modal-header,
+[data-theme="dark"] .booking-modal-footer {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-close-btn {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .modal-close-btn:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .step-heading {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .step-desc {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .option-select-card {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .option-select-card:hover {
+  border-color: var(--primary);
+  background-color: #352C26;
+}
+
+[data-theme="dark"] .option-select-card.selected {
+  border-color: var(--primary);
+  background-color: rgba(223, 121, 88, 0.22);
+}
+
+[data-theme="dark"] .seat-counter-wrap,
+[data-theme="dark"] .booking-summary-box {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .counter-btn {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .counter-value,
+[data-theme="dark"] .summary-total {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .confirmation-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ticket-details-box {
+  background-color: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ticket-item-label {
+  color: var(--body-muted);
+}
+
+[data-theme="dark"] .ticket-item-val {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   GIFT EXPERIENCES & CORPORATE EVENTS
+   ========================================================================== */
+[data-theme="dark"] .gift-card,
+[data-theme="dark"] .gift-builder-container,
+[data-theme="dark"] .corp-builder-box,
+[data-theme="dark"] .corp-journey-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .gift-card-desc {
+  color: var(--body-text);
+}
+
+[data-theme="dark"] .gift-card-features {
+  color: var(--body-muted);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .gift-card-preview-wrap {
+  background: linear-gradient(135deg, #1C1714 0%, #2E2520 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .corp-step-num {
+  background-color: rgba(223, 121, 88, 0.2);
+  color: #FFA588;
+}
+
+[data-theme="dark"] .corp-card-media .corp-step-num {
+  background: rgba(18, 14, 12, 0.88);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFA588;
+}
+
+[data-theme="dark"] .corp-step-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .corp-step-desc {
+  color: #A09891;
+}
+
+[data-theme="dark"] .size-display-badge {
+  color: #FFA588;
+}
+
+[data-theme="dark"] .corp-builder-box label {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] [style*="background-color:var(--espresso)"] {
+  background-color: #1A1613 !important;
+  border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   BADGES & PILLS
+   ========================================================================== */
+[data-theme="dark"] .badge-primary,
+[data-theme="dark"] .badge-espresso,
+[data-theme="dark"] .badge-outline {
+  background-color: rgba(223, 121, 88, 0.22);
+  color: #FFA588;
+  border-color: rgba(223, 121, 88, 0.42);
+}
+
+/* ==========================================================================
+   HEADER, DRAWER & FOOTER
+   ========================================================================== */
+[data-theme="dark"] .site-header {
+  background-color: rgba(20, 17, 15, 0.88);
+  border-bottom-color: rgba(74, 62, 54, 0.7);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .mobile-drawer {
+  background-color: var(--bg-card);
+}
+
+[data-theme="dark"] .drawer-header,
+[data-theme="dark"] .drawer-footer {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .brand-logo-img {
+  content: url('../assets/logo-dark.png');
+  filter: none !important;
+  opacity: 1;
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: #0E0C0B;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .footer-brand-name .brand-name {
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] .footer-brand-name .brand-tagline,
+[data-theme="dark"] .footer-desc {
+  color: #CDC3B8;
+}
+
+[data-theme="dark"] .footer-address,
+[data-theme="dark"] .footer-contact-item {
+  color: #CDC3B8;
+}
+
+[data-theme="dark"] .footer-socials a {
+  color: #FFF9F1;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .footer-nav-title {
+  color: #FFF9F1;
+}
+
+[data-theme="dark"] .footer-nav-list a {
+  color: #CDC3B8;
+}
+
+[data-theme="dark"] .footer-nav-list a:hover {
+  color: #FFA588;
+}
+
+[data-theme="dark"] .footer-bottom {
+  color: #A09588;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .footer-bottom a {
+  color: #CDC3B8;
+}
+
+[data-theme="dark"] .texture-grain::after {
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 0);
+}

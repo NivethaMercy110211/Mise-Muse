@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal & My Kitchen | Mise & Muse Culinary Studio</title>
+  <!-- Favicon / Browser Icon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/editorial.css?v=3">
+  <link rel="stylesheet" href="css/classes.css?v=2">
+  <link rel="stylesheet" href="css/dashboard.css?v=5">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="texture-grain dashboard-page">
+
+  <!-- Live Top Strip -->
+  <div class="live-cooking-strip" id="liveCookingStrip">
+    <div class="live-strip-content">
+      <span class="live-indicator"><span class="live-pulse"></span> Next Session</span>
+      <span>Italian Pasta Lab · Saturday · 4 seats remaining</span>
+      <a href="classes.html" class="live-strip-link">Reserve Seat →</a>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Mise & Muse — Cook. Create. Gather. — Home">
+        <img src="assets/logo.png" alt="Mise & Muse" class="brand-logo-img">
+        <span class="brand-text">
+          <span class="brand-name">Mise <span class="brand-amp">&amp;</span> Muse</span>
+          <span class="brand-tagline">Cook. Create. Gather.</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button>
+        <button class="control-btn rtl-toggle-btn" type="button">RTL</button>
+        <div class="dashboard-account">
+          <button class="dashboard-account-trigger" type="button" aria-expanded="false" aria-controls="dashboardAccountMenu">
+            <span class="chip-avatar student-avatar-text">EV</span>
+            <span class="dashboard-account-copy">
+              <strong class="student-name-text">Elena Vance</strong>
+              <small class="student-level-text">Confident Cook</small>
+            </span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"></path></svg>
+          </button>
+          <div class="dashboard-account-menu" id="dashboardAccountMenu" hidden>
+            <button type="button" data-account-action="account">Account</button>
+            <button type="button" data-account-action="settings">Settings</button>
+          </div>
+        </div>
+        <button class="mobile-toggle dashboard-menu-toggle" type="button" aria-label="Open dashboard menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard navigation drawer: responsive views only -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer dashboard-mobile-drawer">
+    <div>
+      <div class="drawer-header">
+        <div class="student-profile-mini">
+          <div class="student-avatar">EV</div>
+          <div><h3 class="student-name">Elena Vance</h3><span class="student-level">Confident Cook</span></div>
+        </div>
+      </div>
+      <nav class="dash-nav-list" aria-label="Dashboard navigation">
+        <button class="dash-nav-item active" data-tab="tabMyKitchen"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>My Kitchen</button>
+        <button class="dash-nav-item" data-tab="tabDiscover"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4M11 8v6M8 11h6"></path></svg>Discover Classes</button>
+        <button class="dash-nav-item" data-tab="tabMyBookings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M8 15l2 2 5-5"></path></svg>My Bookings</button>
+        <button class="dash-nav-item" data-tab="tabPassport"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2Z"></path><path d="M8 3v18M11 8h5M11 12h5"></path></svg>Taste Passport</button>
+        <button class="dash-nav-item" data-tab="tabRecipeVault"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>Recipe Vault</button>
+        <button class="dash-nav-item" data-tab="tabAccount"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Account Profile</button>
+        <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.38.27.76.6 1 .99.24.4.4.85.4 1.31v.1h.1v1.2h-.1c0 .46-.16.91-.4 1.31-.24.4-.62.72-1 .99Z"></path></svg>Settings</button>
+        <button type="button" class="dash-nav-item dashboard-signout" data-logout-trigger><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5"></path><path d="m16 16 4-4-4-4M20 12H9"></path></svg>Log Out</button>
+      </nav>
+    </div>
+    <div class="drawer-footer dashboard-drawer-footer">
+      <div class="drawer-controls">
+        <button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button>
+        <button class="control-btn rtl-toggle-btn" type="button">RTL</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="dashboard-layout">
+        <aside class="dashboard-sidebar" aria-label="Dashboard pages">
+          <div class="dashboard-sidebar-kicker">Student studio</div>
+          <h2>My Kitchen</h2>
+          <p>Dedicated spaces for planning, booking, and growing your culinary practice.</p>
+          <nav class="dash-nav-list">
+            <button class="dash-nav-item active" data-tab="tabMyKitchen"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>Overview</button>
+            <button class="dash-nav-item" data-tab="tabDiscover"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4M11 8v6M8 11h6"></path></svg>Discover Classes</button>
+            <button class="dash-nav-item" data-tab="tabMyBookings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M8 15l2 2 5-5"></path></svg>My Bookings</button>
+            <button class="dash-nav-item" data-tab="tabPassport"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2Z"></path><path d="M8 3v18M11 8h5M11 12h5"></path></svg>Taste Passport</button>
+            <button class="dash-nav-item" data-tab="tabRecipeVault"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>Recipe Vault</button>
+            <button class="dash-nav-item" data-tab="tabAccount"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Account Profile</button>
+            <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-5L9 6a7 7 0 0 0-1.7 1L5 6 3 9.5 5 11a7 7 0 0 0 0 2l-2 1.5L5 18l2.3-1a7 7 0 0 0 1.7 1l.5 3h5l.5-3a7 7 0 0 0 1.7-1l2.3 1 2-3.5-2-1.5a7 7 0 0 0 .1-1Z"></path></svg>Preferences &amp; Settings</button>
+          </nav>
+          <div class="dashboard-sidebar-note"><strong>Next session</strong><span>Saturday · 6:00 PM</span></div>
+          <button type="button" class="dashboard-logout-button" data-logout-trigger>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"></path></svg>
+            Log Out
+          </button>
+        </aside>
+        <!-- DASHBOARD CONTENT PANES -->
+        <div class="dashboard-content-area">
+          <!-- TAB 1: MY KITCHEN (HOME) -->
+          <div class="dash-tab-pane active portal-view portal-view-kitchen" id="tabMyKitchen">
+            <div class="portal-view-head" data-view="01 / Overview">
+              <span class="section-eyebrow">Personal Culinary Studio</span>
+              <h1>Welcome Back, Elena</h1>
+              <p style="color:var(--body-muted); font-size:1.05rem;">Your next workshop station, preparation details, and culinary passport progression.</p>
+            </div>
+
+            <!-- Next Class Hero Card -->
+            <div id="myKitchenNextClass"></div>
+
+            <!-- Taste Passport Widget -->
+            <div class="taste-passport-card">
+              <div class="passport-header">
+                <div>
+                  <h3 style="font-size:1.45rem; color:#FFF9F1; margin-bottom:0.25rem;">Your Taste Passport</h3>
+                  <p style="color:var(--oat); font-size:0.85rem; margin:0;">Track the global cuisines you’ve mastered in our studio.</p>
+                </div>
+                <button class="btn btn-outline-white btn-xs" onclick="document.querySelector('.dash-nav-item[data-tab=tabPassport]').click()">View Passport →</button>
+              </div>
+              <div class="passport-grid" id="tastePassportGrid"></div>
+            </div>
+          </div>
+
+          <!-- TAB 2: DISCOVER CLASSES (IN-PORTAL BOOKING) -->
+          <div class="dash-tab-pane portal-view portal-view-discover" id="tabDiscover">
+            <div class="portal-view-head" data-view="02 / Discover">
+              <span class="section-eyebrow">Reserve a Workstation</span>
+              <h2>Discover & Book Culinary Ateliers</h2>
+              <p style="color:var(--body-muted);">Filter upcoming sessions by cuisine and difficulty level. Claim your seat in real time.</p>
+            </div>
+
+            <!-- In-Portal Filters -->
+            <div class="filters-bar" style="margin-bottom:2rem;">
+              <div class="filter-row">
+                <span class="filter-label">Cuisine:</span>
+                <button class="filter-pill portal-cuisine-pill active" data-cuisine="All">All</button>
+                <button class="filter-pill portal-cuisine-pill" data-cuisine="Indian">Indian</button>
+                <button class="filter-pill portal-cuisine-pill" data-cuisine="Italian">Italian</button>
+                <button class="filter-pill portal-cuisine-pill" data-cuisine="Baking">Baking</button>
+                <button class="filter-pill portal-cuisine-pill" data-cuisine="Thai">Thai</button>
+                <button class="filter-pill portal-cuisine-pill" data-cuisine="Continental">Continental</button>
+              </div>
+
+              <div class="filter-row" style="margin-top:0.5rem;">
+                <span class="filter-label">Difficulty:</span>
+                <select class="filter-select" id="portalDifficultySelect">
+                  <option value="All">All Skill Levels</option>
+                  <option value="STARTER">Starter</option>
+                  <option value="CONFIDENT">Confident</option>
+                  <option value="SKILLED">Skilled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="classes-grid" id="portalClassesGrid"></div>
+          </div>
+
+          <!-- TAB 3: MY BOOKINGS -->
+          <div class="dash-tab-pane portal-view portal-view-bookings" id="tabMyBookings">
+            <div class="portal-view-head" data-view="03 / Bookings">
+              <span class="section-eyebrow">Workstation Reservations</span>
+              <h2>My Upcoming Bookings</h2>
+              <p style="color:var(--body-muted);">All active sessions reserved under your student profile.</p>
+            </div>
+
+            <div id="myBookingsList"></div>
+          </div>
+
+          <!-- TAB 4: TASTE PASSPORT DEDICATED VIEW -->
+          <div class="dash-tab-pane portal-view portal-view-passport" id="tabPassport">
+            <div class="portal-view-head" data-view="04 / Passport">
+              <span class="section-eyebrow">Culinary Progression</span>
+              <h2>Your Taste Passport</h2>
+              <p style="color:var(--body-muted);">Verified kitchen milestones based on workshops you have attended.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+              <div style="background-color:var(--bg-card); padding:2rem; border-radius:var(--radius-xl); border:1px solid var(--border-color); box-shadow:var(--card-shadow);">
+                <div class="passport-card-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M7 3v18M17 3v18M3 7h18M3 17h18"></path><path d="M3 3h18v18H3z"></path></svg></div>
+                <h3 style="font-size:1.35rem; margin-bottom:0.25rem;">Italian Masterclass</h3>
+                <span class="badge badge-primary" style="margin-bottom:1rem;">3 Workshops Completed ✓</span>
+                <p style="font-size:0.85rem; color:var(--body-muted);">Mastered 00 flour hydration, tagliatelle rolling, and mantecatura emulsification.</p>
+              </div>
+
+              <div style="background-color:var(--bg-card); padding:2rem; border-radius:var(--radius-xl); border:1px solid var(--border-color); box-shadow:var(--card-shadow);">
+                <div class="passport-card-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0"></path><path d="M9 10c1-2 5-2 6 0M12 7V4"></path></svg></div>
+                <h3 style="font-size:1.35rem; margin-bottom:0.25rem;">Indian Regional Spice</h3>
+                <span class="badge badge-primary" style="margin-bottom:1rem;">1 Workshop Completed ✓</span>
+                <p style="font-size:0.85rem; color:var(--body-muted);">Mastered oil tadka dynamics, Kashmiri rogan josh braising, and tandoor flatbreads.</p>
+              </div>
+
+              <div style="background-color:var(--bg-card); padding:2rem; border-radius:var(--radius-xl); border:1px solid var(--border-color); box-shadow:var(--card-shadow);">
+                <div class="passport-card-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M5 19c-3-3 0-9 5-13s10-3 9 2-4 10-8 12c-3 1-5 0-6-1Z"></path><path d="m10 8 2 2M14 6l2 2M8 12l2 2"></path></svg></div>
+                <h3 style="font-size:1.35rem; margin-bottom:0.25rem;">Artisan Bakery & Levain</h3>
+                <span class="badge badge-primary" style="margin-bottom:1rem;">2 Workshops Completed ✓</span>
+                <p style="font-size:0.85rem; color:var(--body-muted);">Mastered high-hydration levain, coil folds, razor blade ear scoring, and steam baking.</p>
+              </div>
+
+              <div class="passport-detail-card passport-detail-card--locked">
+                <div class="passport-card-icon is-muted" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 15h12a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"></path><path d="M16 16h3a2 2 0 0 0 2-2M7 11h9M9 7h8"></path></svg></div>
+                <h3 style="font-size:1.35rem; margin-bottom:0.25rem;">Thai Street Food</h3>
+                <span class="badge badge-outline" style="margin-bottom:1rem;">Not Explored Yet</span>
+                <p style="font-size:0.85rem; color:var(--body-muted); margin-bottom:1rem;">Unlock wok hei control, clay pestle bruising, and 5-flavor balancing.</p>
+                <button class="btn btn-primary btn-xs" onclick="window.openBookingModal('bangkok-street-lab')">Book Thai Workshop</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: RECIPE VAULT -->
+          <div class="dash-tab-pane portal-view portal-view-recipes" id="tabRecipeVault">
+            <div class="portal-view-head" data-view="05 / Recipes">
+              <span class="section-eyebrow">Lifetime Digital Formulas</span>
+              <h2>Your Recipe Vault</h2>
+              <p style="color:var(--body-muted);">Full formulas, ingredient proportions, and chef tips unlocked from your workshops.</p>
+            </div>
+
+            <div class="recipes-vault-grid" id="recipeVaultGrid"></div>
+          </div>
+
+          <!-- TAB 6: ACCOUNT PROFILE -->
+          <div class="dash-tab-pane portal-view portal-view-account" id="tabAccount">
+            <div class="portal-view-head" data-view="06 / Account">
+              <span class="section-eyebrow">Student Identity &amp; Credentials</span>
+              <h2>My Account Profile</h2>
+              <p style="color:var(--body-muted);">Manage your personal atelier identity, culinary proficiency level, contact information, and dietary requirements.</p>
+            </div>
+
+            <div class="account-profile-grid">
+              <!-- Profile Summary Card -->
+              <div class="account-card profile-hero-card">
+                <div class="profile-hero-badge">
+                  <div class="profile-avatar-large student-avatar-text">EV</div>
+                  <div class="profile-hero-info">
+                    <h3 class="student-name-text" style="font-size:1.5rem; margin-bottom:0.25rem;">Elena Vance</h3>
+                    <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+                      <span class="badge badge-primary student-level-text">Confident Cook</span>
+                      <span class="badge badge-espresso">Atelier Member · 2026</span>
+                    </div>
+                    <p style="font-size:0.86rem; color:var(--body-muted); margin-top:0.6rem;">Personalized workstation &amp; Taste Passport holder</p>
+                  </div>
+                </div>
+                <div class="profile-quick-stats">
+                  <div class="quick-stat-box">
+                    <span class="quick-stat-num" id="statWorkshopsCount">6</span>
+                    <span class="quick-stat-label">Workshops Attended</span>
+                  </div>
+                  <div class="quick-stat-box">
+                    <span class="quick-stat-num" id="statActiveBookings">1</span>
+                    <span class="quick-stat-label">Active Booking</span>
+                  </div>
+                  <div class="quick-stat-box">
+                    <span class="quick-stat-num" id="statCuisinesExplored">3</span>
+                    <span class="quick-stat-label">Cuisines Mastered</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Personal Information Form Card -->
+              <div class="account-card">
+                <div class="account-card-header">
+                  <h3 style="font-size:1.25rem; margin-bottom:0.25rem;">Personal Details</h3>
+                  <p style="font-size:0.85rem; color:var(--body-muted);">Information used for workstation reservation badges and chef briefings.</p>
+                </div>
+
+                <form id="accountProfileForm" class="account-form">
+                  <div class="form-row-2col">
+                    <div class="form-group">
+                      <label for="accInputName">Full Name</label>
+                      <input type="text" id="accInputName" class="form-input" required placeholder="Elena Vance">
+                    </div>
+                    <div class="form-group">
+                      <label for="accInputEmail">Email Address</label>
+                      <input type="email" id="accInputEmail" class="form-input" required placeholder="elena.vance@studio.culinary">
+                    </div>
+                  </div>
+
+                  <div class="form-row-2col">
+                    <div class="form-group">
+                      <label for="accInputPhone">Phone Number</label>
+                      <input type="tel" id="accInputPhone" class="form-input" placeholder="+1 (555) 382-9912">
+                    </div>
+                    <div class="form-group">
+                      <label for="accSelectLevel">Culinary Proficiency Level</label>
+                      <select id="accSelectLevel" class="form-select">
+                        <option value="Starter">Starter (First-Time Cook)</option>
+                        <option value="Confident Cook">Confident Cook (Home Cook)</option>
+                        <option value="Skilled">Skilled (Technique Focused)</option>
+                        <option value="Master">Master (Advanced Culinary Enthusiast)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accInputDietary">Dietary Restrictions &amp; Allergies</label>
+                    <input type="text" id="accInputDietary" class="form-input" placeholder="e.g. Vegetarian Friendly, No Shellfish, Nut Allergy">
+                    <small style="color:var(--body-muted); font-size:0.78rem; display:block; margin-top:0.35rem;">Our chefs customize your individual workstation ingredients to this note.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accInputEmergency">Emergency Contact</label>
+                    <input type="text" id="accInputEmergency" class="form-input" placeholder="Name and Phone Number (e.g. Marcus Vance +1 555-839-2041)">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="accInputBio">Culinary Aspirations &amp; Bio</label>
+                    <textarea id="accInputBio" class="form-textarea" rows="3" placeholder="Tell us what culinary techniques you want to master this season..."></textarea>
+                  </div>
+
+                  <div class="form-actions-bar">
+                    <button type="submit" class="btn btn-primary" id="btnSaveProfile">Save Profile Changes</button>
+                    <button type="button" class="btn btn-outline" id="btnResetProfile">Reset to Saved</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 7: PREFERENCES & SETTINGS -->
+          <div class="dash-tab-pane portal-view portal-view-settings" id="tabSettings">
+            <div class="portal-view-head" data-view="07 / Settings">
+              <span class="section-eyebrow">Studio &amp; Portal Configuration</span>
+              <h2>Preferences &amp; Settings</h2>
+              <p style="color:var(--body-muted);">Configure your session notifications, measurement standards, kitchen accessibility, and account security.</p>
+            </div>
+
+            <div class="settings-grid">
+              <!-- Kitchen & Workshop Preferences -->
+              <div class="account-card">
+                <div class="account-card-header">
+                  <h3 style="font-size:1.25rem; margin-bottom:0.25rem;">Kitchen Formulation Preferences</h3>
+                  <p style="font-size:0.85rem; color:var(--body-muted);">How recipe card formulas and ingredient measures are displayed.</p>
+                </div>
+
+                <form id="settingsPreferencesForm" class="settings-form">
+                  <div class="form-group">
+                    <label class="setting-label">Measurement Standard</label>
+                    <div class="setting-radio-group">
+                      <label class="setting-radio-card">
+                        <input type="radio" name="settingUnits" value="metric" checked>
+                        <div class="radio-card-body">
+                          <strong>Metric Standard (Grams / mL)</strong>
+                          <small>Professional French bakery and pastry atelier precision</small>
+                        </div>
+                      </label>
+                      <label class="setting-radio-card">
+                        <input type="radio" name="settingUnits" value="imperial">
+                        <div class="radio-card-body">
+                          <strong>Imperial Standard (Cups / Oz)</strong>
+                          <small>Traditional home kitchen volume-based measurement</small>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group" style="margin-top:1.5rem;">
+                    <label for="settingPreferredCuisine">Primary Cuisine Interest</label>
+                    <select id="settingPreferredCuisine" class="form-select">
+                      <option value="Italian">Italian Atelier (Fresh Pasta, Emulsions, Pizza)</option>
+                      <option value="Indian">Indian Masterclasses (Spice Tempering, Tandoor, Curries)</option>
+                      <option value="Baking">Artisan Bakery (Wild Sourdough, Viennoiserie, Brioche)</option>
+                      <option value="Thai">Thai Street Kitchen (Wok Hei, Mortar Bruising, Herbs)</option>
+                      <option value="Continental">French Continental (Mother Sauces, Pan Roasting)</option>
+                    </select>
+                  </div>
+
+                  <div class="account-menu-divider" style="margin:2rem 0;"></div>
+
+                  <div class="account-card-header">
+                    <h3 style="font-size:1.25rem; margin-bottom:0.25rem;">Communications &amp; Alerts</h3>
+                    <p style="font-size:0.85rem; color:var(--body-muted);">Control notifications sent to your email and phone.</p>
+                  </div>
+
+                  <div class="settings-toggle-list">
+                    <div class="setting-toggle-row">
+                      <div class="setting-toggle-copy">
+                        <strong>SMS Workshop Reminders</strong>
+                        <p>Receive live SMS confirmation 24h &amp; 2h prior to atelier session start with parking &amp; studio gate codes.</p>
+                      </div>
+                      <label class="switch-control">
+                        <input type="checkbox" id="settingSmsReminders" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                      <div class="setting-toggle-copy">
+                        <strong>Email Recipe Card Drops</strong>
+                        <p>Automatically receive printable PDF digital recipe formulas right after each completed workshop.</p>
+                      </div>
+                      <label class="switch-control">
+                        <input type="checkbox" id="settingEmailReminders" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                      <div class="setting-toggle-copy">
+                        <strong>Priority Chef Atelier Alerts</strong>
+                        <p>Early 48-hour access notification when guest Michelin-star chef workshops are announced.</p>
+                      </div>
+                      <label class="switch-control">
+                        <input type="checkbox" id="settingRecipeAlerts" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                      <div class="setting-toggle-copy">
+                        <strong>Automatic Calendar Sync (.ics)</strong>
+                        <p>Automatically export confirmed workshop reservations directly to your Apple or Google calendar.</p>
+                      </div>
+                      <label class="switch-control">
+                        <input type="checkbox" id="settingCalendarSync" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-actions-bar" style="margin-top:2rem;">
+                    <button type="submit" class="btn btn-primary" id="btnSaveSettings">Save Preferences</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Security & Session Control -->
+              <div class="account-card">
+                <div class="account-card-header">
+                  <h3 style="font-size:1.25rem; margin-bottom:0.25rem;">Security &amp; Credentials</h3>
+                  <p style="font-size:0.85rem; color:var(--body-muted);">Update your student account password and active session credentials.</p>
+                </div>
+
+                <form id="settingsSecurityForm" class="settings-form">
+                  <div class="form-group">
+                    <label for="secCurrentPass">Current Password</label>
+                    <input type="password" id="secCurrentPass" class="form-input" placeholder="••••••••••••" required>
+                  </div>
+                  <div class="form-row-2col">
+                    <div class="form-group">
+                      <label for="secNewPass">New Password</label>
+                      <input type="password" id="secNewPass" class="form-input" placeholder="Minimum 8 characters" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="secConfirmPass">Confirm New Password</label>
+                      <input type="password" id="secConfirmPass" class="form-input" placeholder="Re-enter new password" required>
+                    </div>
+                  </div>
+                  <div class="form-actions-bar">
+                    <button type="submit" class="btn btn-outline" id="btnUpdatePassword">Update Password</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="logout-modal-overlay" id="logoutConfirmModal" role="dialog" aria-modal="true" aria-labelledby="logoutModalTitle" aria-describedby="logoutModalDescription" hidden>
+    <div class="logout-modal-card">
+      <div class="logout-modal-icon" aria-hidden="true">
+        <svg class="ui-icon" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"></path></svg>
+      </div>
+      <h2 id="logoutModalTitle">Log out of your kitchen?</h2>
+      <p id="logoutModalDescription">You’ll return to the login page. Your bookings, passport progress, and saved recipes will remain available.</p>
+      <div class="logout-modal-actions">
+        <button type="button" class="btn btn-outline" id="cancelLogoutButton">Stay Signed In</button>
+        <button type="button" class="btn btn-primary" id="confirmLogoutButton">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/state.js"></script>
+  <script src="js/navigation.js?v=3"></script>
+  <script src="js/booking-modal.js"></script>
+  <script src="js/dashboard.js?v=4"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

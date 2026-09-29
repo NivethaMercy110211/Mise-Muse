@@ -1,0 +1,59 @@
+/* Mise & Muse — iPad Pro / small laptop: 1024 × 1366 */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .container, .container-wide { padding-inline: 28px; }
+  .main-nav,
+  .header-actions > :not(.mobile-toggle) { display: none !important; }
+  .mobile-toggle { display: flex !important; margin-inline-start: auto; }
+
+  /* iPad Pro: six-card sections align two by two (2 × 2 × 2). */
+  .classes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px;
+  }
+
+  .chef-spotlight-grid, .student-proof-grid,
+  .recipes-vault-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px;
+  }
+  .corporate-journey-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 20px;
+  }
+  .gift-packages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .passport-grid, .option-select-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .section { padding-block: clamp(4rem, 6vw, 5.5rem); }
+
+  /* Odd-count two-column grids: center the orphaned last card. */
+  .gift-packages-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc((100% - 24px) / 2) !important;
+  }
+
+  /* About studio details: two cards above, centered final card below. */
+  .studio-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+
+  .studio-detail-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc((100% - 24px) / 2) !important;
+  }
+
+  /* True three-column grids with one card on the final row: center it. */
+  .chef-spotlight-grid > :last-child:nth-child(3n + 1),
+  .student-proof-grid > :last-child:nth-child(3n + 1),
+  .recipes-vault-grid > :last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc((100% - 48px) / 3) !important;
+  }
+}

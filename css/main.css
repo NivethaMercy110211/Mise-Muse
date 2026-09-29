@@ -1,0 +1,551 @@
+/* ==========================================================================
+   MISE & MUSE - CORE DESIGN SYSTEM & FOUNDATIONS (2026 Editorial)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Color Tokens */
+  --primary: #C65332;
+  --primary-hover: #A84025;
+  --primary-light: #F7EAE6;
+  --primary-glow: rgba(198, 83, 50, 0.18);
+  
+  --espresso: #29231F;
+  --warm-cream: #FBF7F0;
+  --oat: #EEE5D8;
+  --soft-surface: #F5EFE7;
+  --body-text: #6B625B;
+  --body-muted: #8E847C;
+  --border: #B8A793;
+  --border-subtle: #D5C9BA;
+  --border-strong: #968470;
+  --white: #FFFFFF;
+
+  /* Semantic UI Tokens */
+  --bg-main: var(--warm-cream);
+  --bg-surface: var(--soft-surface);
+  --bg-card: #FFFFFF;
+  --bg-subtle: var(--oat);
+  --text-main: var(--espresso);
+  --text-body: var(--body-text);
+  --border-color: var(--border);
+  --card-shadow: 0 12px 36px -8px rgba(41, 35, 31, 0.07), 0 4px 12px -2px rgba(41, 35, 31, 0.03);
+  --card-hover-shadow: 0 24px 48px -12px rgba(41, 35, 31, 0.12), 0 8px 16px -4px rgba(198, 83, 50, 0.08);
+
+  /* Unified brand status tokens: every badge stays within the theme palette. */
+  --status-avail-bg: var(--primary-light);
+  --status-avail-text: var(--primary-hover);
+  --status-few-bg: var(--primary-light);
+  --status-few-text: var(--primary-hover);
+  --status-full-bg: var(--primary-light);
+  --status-full-text: var(--primary-hover);
+
+  /* Typography Tokens */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Header & Navigation Heights */
+  --header-height: 80px;
+  --live-strip-height: 38px;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-main);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+h4 {
+  font-size: 1.35rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.ui-icon { width: 1.05em; height: 1.05em; flex: 0 0 auto; display: inline-block; vertical-align: -0.16em; color: currentColor; }
+.status-key { display: inline-flex; align-items: center; gap: 0.4rem; }
+.status-key::before { content: ''; width: 0.62rem; height: 0.62rem; border-radius: 50%; background: currentColor; }
+.status-key.available { color: var(--status-avail-text); }
+.status-key.few { color: var(--status-few-text); }
+.status-key.full { color: var(--status-full-text); }
+
+/* ==========================================================================
+   CONTAINER & LAYOUT SYSTEM
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
+}
+
+.container-wide {
+  max-width: 1540px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
+}
+
+.container-narrow {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding-top: clamp(4rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4rem, 8vw, 7.5rem);
+  position: relative;
+}
+
+.section-sm {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-hero {
+  padding-top: calc(var(--header-height) + var(--live-strip-height) + 2.5rem);
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.bg-oat {
+  background-color: var(--oat);
+}
+
+.bg-espresso {
+  background-color: var(--espresso);
+  color: var(--warm-cream);
+}
+.bg-espresso h1, .bg-espresso h2, .bg-espresso h3, .bg-espresso h4 {
+  color: #FFF9F1;
+}
+.bg-espresso .section-eyebrow {
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   EDITORIAL SECTION HEADERS & LABELS
+   ========================================================================== */
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header.text-center {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+/* Shared professional line icons used in place of platform-dependent emoji. */
+.ui-icon {
+  width: 1.15em;
+  height: 1.15em;
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: -0.18em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.take-home-icon .ui-icon,
+.passport-card-icon .ui-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.passport-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+  border-radius: 50%;
+}
+
+.passport-card-icon.is-muted {
+  color: var(--body-muted);
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--body-muted);
+  max-width: 620px;
+  margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   BADGES, PILLS & STATUSES
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.badge-primary,
+.badge-espresso,
+.badge-outline {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+/* Seat Availability Indicator */
+.seat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  line-height: 1;
+}
+
+.seat-pill.status-available {
+  background-color: var(--status-avail-bg);
+  color: var(--status-avail-text);
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+.seat-pill.status-few {
+  background-color: var(--status-few-bg);
+  color: var(--status-few-text);
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+.seat-pill.status-full {
+  background-color: var(--status-full-bg);
+  color: var(--status-full-text);
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+.seat-pill::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* Difficulty Meter */
+.difficulty-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  padding: 0.3rem 0.75rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+}
+
+.difficulty-bars {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.difficulty-bar {
+  width: 4px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: var(--border-color);
+}
+
+.difficulty-pill[data-level="STARTER"] .difficulty-bar:nth-child(1) { background-color: var(--primary); }
+.difficulty-pill[data-level="CONFIDENT"] .difficulty-bar:nth-child(1),
+.difficulty-pill[data-level="CONFIDENT"] .difficulty-bar:nth-child(2) { background-color: var(--primary); }
+.difficulty-pill[data-level="SKILLED"] .difficulty-bar { background-color: var(--primary); }
+
+/* Grain & Texture */
+.texture-grain {
+  position: relative;
+}
+.texture-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Accessibility & Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Toasts */
+#toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--espresso);
+  color: var(--warm-cream);
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-left: 4px solid var(--primary);
+  animation: slideInToast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+  max-width: 380px;
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Shared, progressive-enhancement entrance motion */
+.motion-enabled .motion-header {
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: opacity 520ms ease var(--motion-delay, 0ms), transform 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms);
+}
+
+.motion-enabled .motion-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 620ms ease var(--motion-delay, 0ms), transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-enabled .motion-banner {
+  transform: translateY(22px) scale(0.985);
+}
+
+.motion-enabled .motion-left {
+  transform: translateX(-28px);
+}
+
+.motion-enabled .motion-right {
+  transform: translateX(28px);
+}
+
+.motion-enabled .motion-card {
+  transform: translateY(22px) scale(0.975);
+}
+
+.motion-enabled .motion-header.motion-visible,
+.motion-enabled .motion-reveal.motion-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.motion-enabled .motion-reveal.motion-visible {
+  will-change: auto;
+}
+
+/* Gentle image movement keeps hero and CTA banners visually alive without
+   distracting from their copy or controls. */
+.banner-hero,
+.visual-page-banner,
+.class-hero,
+.hero-main-img-card,
+.cta-banner-full {
+  animation: banner-image-drift 16s ease-in-out infinite alternate;
+  will-change: background-position;
+}
+
+.banner-hero:hover,
+.visual-page-banner:hover,
+.class-hero:hover,
+.hero-main-img-card:hover,
+.cta-banner-full:hover {
+  animation-duration: 9s;
+}
+
+.auth-bg-img {
+  animation: auth-banner-drift 16s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.auth-media-pane:hover .auth-bg-img {
+  animation-duration: 9s;
+}
+
+@keyframes banner-image-drift {
+  from { background-position: 48% 50%; }
+  to { background-position: 53% 47%; }
+}
+
+@keyframes auth-banner-drift {
+  from { transform: scale(1.02) translate3d(-0.5%, 0, 0); }
+  to { transform: scale(1.075) translate3d(1.25%, -0.75%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

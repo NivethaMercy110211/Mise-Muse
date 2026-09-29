@@ -1,0 +1,16 @@
+/* Mise & Muse — Desktop: 1440 × 900 */
+@media screen and (min-width: 1440px) {
+  .container, .container-wide { max-width: 1440px; padding-inline: 40px; }
+  .main-nav { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+  .header-actions > :not(.mobile-toggle) { display: inline-flex; }
+  .classes-grid, .gift-packages-grid, .chef-spotlight-grid,
+  .student-proof-grid, .recipes-vault-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 32px;
+  }
+  .corporate-journey-grid, .passport-grid, .option-select-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+  .hero-title { font-size: 4.8rem; }
+}

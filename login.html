@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Mise & Muse Culinary Studio</title>
+  <!-- Favicon / Browser Icon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="texture-grain">
+
+  <div class="auth-page-wrap">
+    <!-- Visual Image Pane: Atmospheric contemporary cooking studio just before evening workshop -->
+    <div class="auth-media-pane">
+      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1400&auto=format&fit=crop" alt="Atmospheric contemporary cooking studio just before an evening workshop with prepared central workstation, folded apron, fresh herbs, and cookware under warm lighting" class="auth-bg-img">
+
+      <div class="auth-quote-box">
+        <p class="auth-quote-text">“Cooking is at once child’s play and adult joy. And it pays to do it well.”</p>
+        <div style="font-size:0.85rem; color:var(--oat);">The Kitchen Atelier · Evening Sessions</div>
+      </div>
+    </div>
+
+    <!-- Form Pane -->
+    <div class="auth-form-pane">
+      <div class="auth-top-controls">
+        <button class="control-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="control-btn rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL/LTR Direction">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+        </button>
+      </div>
+
+      <div class="auth-card-inner">
+        <div class="auth-logo-row">
+          <a href="index.html" class="brand-logo" aria-label="Mise & Muse — Cook. Create. Gather. — Home">
+            <img src="assets/logo.png" alt="Mise & Muse" class="brand-logo-img">
+            <span class="brand-text">
+              <span class="brand-name">Mise <span class="brand-amp">&amp;</span> Muse</span>
+              <span class="brand-tagline">Cook. Create. Gather.</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="auth-header">
+          <span class="section-eyebrow" style="display:block;">Student Portal</span>
+          <h1 style="font-size:2.2rem; margin-bottom:0.5rem;">Welcome Back to the Kitchen</h1>
+          <p style="color:var(--body-muted); font-size:0.95rem;">Enter your student credentials to access My Kitchen, your Taste Passport, and unlocked Recipe Vault.</p>
+        </div>
+
+        <form id="studentLoginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email Address</label>
+            <input type="email" class="form-control" id="loginEmail" value="elena.vance@studio.culinary" placeholder="name@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" value="••••••••••••" placeholder="Enter your password" required>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin:1rem 0 1.5rem; font-size:0.88rem;">
+            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main); font-weight:500;">
+              <input type="checkbox" id="rememberMe" checked style="accent-color:var(--primary); width:16px; height:16px;"> Remember Me
+            </label>
+            <a href="forgot-password.html" style="color:var(--primary); font-weight:700; text-decoration:none;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+            Login to My Kitchen →
+          </button>
+        </form>
+
+        <div class="auth-divider">Or continue with</div>
+
+        <div class="social-login-grid">
+          <button type="button" class="social-login-btn" onclick="handleSocialAuth('Google')">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.57 0 2.98.54 4.1 1.6l3.07-3.07C17.3 1.76 14.84 1 12 1 7.5 1 3.65 3.56 1.75 7.28l3.7 2.87C6.33 7.19 8.94 5 12 5z"/><path fill="#4285F4" d="M23.49 12.28c0-.79-.07-1.54-.19-2.28H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58l3.7 2.87c2.16-2 3.72-4.94 3.72-8.68z"/><path fill="#FBBC05" d="M5.45 14.85c-.24-.73-.38-1.5-.38-2.35 0-.85.14-1.62.38-2.35L1.75 7.28C.64 9.48 0 11.91 0 14.5s.64 5.02 1.75 7.22l3.7-2.87z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.7-2.87c-1.08.72-2.45 1.16-4.23 1.16-3.06 0-5.67-2.19-6.55-5.15L1.75 17.1C3.65 20.82 7.5 24 12 24z"/></svg>
+            Google
+          </button>
+          <button type="button" class="social-login-btn" onclick="handleSocialAuth('Apple')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.74-.94 2.76 1.02.08 2.05-.51 2.67-1.26z"/></svg>
+            Apple
+          </button>
+        </div>
+
+        <p style="text-align:center; font-size:0.88rem; color:var(--body-muted); margin-top:2rem;">
+          Don’t have a student account? <a href="register.html" style="color:var(--primary); font-weight:700;">Create an Account →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/state.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('studentLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const pwd = document.getElementById('loginPassword').value;
+      window.MiseState.login(email, pwd);
+      window.location.href = 'dashboard.html';
+    });
+
+    function handleSocialAuth(provider) {
+      window.MiseState.login('elena.vance@studio.culinary');
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

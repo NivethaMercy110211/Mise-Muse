@@ -1,0 +1,79 @@
+/* ==========================================================================
+   MISE & MUSE - RTL (RIGHT-TO-LEFT) & ACCESSIBILITY STYLES
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .section-eyebrow::before {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .btn svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .btn-link-editorial svg {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .btn-link-editorial:hover svg {
+  transform: scaleX(-1) translateX(4px);
+}
+
+[dir="rtl"] .hero-floating-card {
+  left: auto;
+  right: -2.5rem;
+}
+
+[dir="rtl"] .session-timeline,
+[dir="rtl"] .past-classes-timeline {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+[dir="rtl"] .session-timeline::before,
+[dir="rtl"] .past-classes-timeline::before {
+  left: auto;
+  right: 7px;
+}
+
+[dir="rtl"] .timeline-step::before {
+  left: auto;
+  right: -2rem;
+}
+
+[dir="rtl"] .timeline-year-marker {
+  margin-left: 0;
+  margin-right: -2rem;
+}
+
+[dir="rtl"] .chef-signature-tech,
+[dir="rtl"] .technique-item,
+[dir="rtl"] .what-to-bring-box,
+[dir="rtl"] .cal-session-chip {
+  border-left: none;
+  border-right: 3px solid var(--primary);
+}
+
+[dir="rtl"] #toast-container {
+  right: auto;
+  left: 2rem;
+}
+
+[dir="rtl"] .toast {
+  border-left: none;
+  border-right: 4px solid var(--primary);
+}
+
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-drawer.open {
+  transform: translateX(0);
+}

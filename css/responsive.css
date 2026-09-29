@@ -1,0 +1,769 @@
+@import url("responsive-360.css");
+@import url("responsive-768.css");
+@import url("responsive-1024.css");
+@import url("responsive-1440.css");
+
+/* ==========================================================================
+   MISE & MUSE - RESPONSIVE DESIGN (Mobile 360px, Tablet 768px, Desktop 1440px+)
+   ========================================================================== */
+
+/* Large Desktops (1440px+) */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: 4.8rem;
+  }
+}
+
+/* Medium Tablets & Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-grid,
+  .class-hero-grid,
+  .class-detail-layout,
+  .gift-builder-layout,
+  .dashboard-layout,
+  .auth-page-wrap {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-floating-card {
+    position: static;
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .signature-experience-item {
+    grid-template-columns: 1fr;
+  }
+  .signature-experience-item:nth-child(even) {
+    direction: ltr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .journey-track {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+  }
+  .journey-track::before {
+    display: none;
+  }
+
+  .session-strip-card {
+    grid-template-columns: 100px auto minmax(0, 1fr) 140px;
+    grid-template-rows: auto auto;
+    gap: 1rem 1.5rem;
+    align-items: center;
+  }
+  .session-strip-card > .session-date-box {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: stretch;
+  }
+  .session-strip-card > .session-info-main {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .session-strip-card > div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .session-strip-card > .capacity-indicator {
+    grid-column: 3;
+    grid-row: 2;
+    min-width: 180px;
+  }
+  .session-strip-card > div:last-child {
+    grid-column: 4;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  .booking-sidebar-card {
+    position: static;
+  }
+
+  .mobile-sticky-booker {
+    display: flex;
+  }
+
+  .auth-media-pane {
+    min-height: 360px;
+  }
+}
+
+/* Mobile & Small Screens (max-width: 767px) */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 70px;
+    --live-strip-height: 34px;
+  }
+
+  .mood-tiles-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .mood-tile-1, .mood-tile-2, .mood-tile-3, .mood-tile-4, .mood-tile-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 240px;
+  }
+
+  .moments-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+  }
+  .moment-1, .moment-3 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .moment-2, .moment-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .session-strip-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .session-date-box {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .calendar-days-grid {
+    display: none; /* Hide heavy calendar grid on smaller screens and prefer Agenda/List view */
+  }
+
+  .cal-mobile-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-details-box {
+    grid-template-columns: 1fr;
+  }
+
+  .next-class-hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .next-class-media {
+    min-height: 220px;
+  }
+}
+
+/* Small Phones (360px - 480px) */
+@media (max-width: 480px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .social-login-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-track {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .journey-step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 1.25rem;
+    row-gap: 0.25rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .journey-step-num {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .journey-step-title,
+  .journey-step-desc {
+    grid-column: 2;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .booking-modal-container {
+    max-height: 95vh;
+  }
+  
+  .booking-modal-body {
+    padding: 1.25rem;
+  }
+}
+
+/* ========================================================================== 
+   2026 SITE-WIDE RESPONSIVE & ACCESSIBILITY HARDENING
+   Exact targets: 360, 768, 1024, 1366 and 1440+
+   ========================================================================== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+main,
+section,
+.container,
+.container-wide,
+.container-narrow,
+.header-container,
+.footer-grid,
+[class*="-grid"] {
+  min-width: 0;
+}
+
+.container,
+.container-wide {
+  max-width: 1440px;
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+.badge,
+.seat-pill,
+.difficulty-pill,
+.note-category-badge,
+.size-display-badge,
+.filter-pill {
+  width: fit-content;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.badge,
+.note-category-badge,
+.size-display-badge {
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 32%, transparent);
+}
+
+.team-size-heading .size-display-badge {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+/* One reusable brand treatment with image logo mark. */
+.brand-logo,
+.footer-brand-name {
+  position: relative;
+  min-height: 44px;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.site-footer .footer-brand-name {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.site-footer .brand-name,
+.site-footer .brand-tagline {
+  color: var(--text-main);
+}
+
+.site-footer .brand-tagline {
+  color: var(--body-text);
+}
+
+/* Repeated cards stretch naturally; actions settle at the bottom. */
+:where(.class-card, .gift-card, .chef-spotlight-card, .student-proof-card,
+  .cook-dish-card, .corp-journey-card, .recipe-vault-card, .chef-note-card,
+  .option-select-card, .rail-card) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+:where(.class-card-body, .gift-card-body, .chef-card-body) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+:where(.class-card-footer, .card-actions, .gift-card-features) {
+  margin-top: auto;
+}
+
+:where(.class-card-media, .gift-card-media, .chef-card-media, .cook-dish-card > div:first-child) {
+  aspect-ratio: 16 / 10;
+  height: auto;
+  min-height: 0;
+}
+
+:where(.class-card-img, .gift-card-img, .chef-card-img, .cook-dish-card img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:where(.class-card-title, .gift-card-title) {
+  min-height: 2.3em;
+}
+
+/* Featured class titles share an exact two-line area for consistent alignment. */
+.class-card .class-card-title {
+  display: -webkit-box;
+  min-height: calc(1.25em * 2);
+  max-height: calc(1.25em * 2);
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+:where(.class-card p, .gift-card-desc, .chef-spotlight-card p, .student-proof-card p,
+  .recipe-vault-card p, .chef-note-card p) {
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: unset;
+}
+
+/* Featured class rail: reserve the same three-line copy area on every card. */
+.class-card .class-skill-summary {
+  display: -webkit-box;
+  min-height: calc(1.55em * 3);
+  max-height: calc(1.55em * 3);
+  line-height: 1.55;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Desktop/laptop: readable 3-column content cards. */
+:where(.classes-grid, .gift-packages-grid, .chef-spotlight-grid, .student-proof-grid,
+  .recipes-vault-grid) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+  align-items: stretch;
+}
+
+.passport-grid,
+.option-select-grid,
+.corporate-journey-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .main-nav,
+  .header-actions > :not(.mobile-toggle) {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .header-container {
+    gap: 1rem;
+  }
+
+  :where(.classes-grid, .gift-packages-grid, .chef-spotlight-grid, .student-proof-grid,
+    .recipes-vault-grid) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tablet-only two-column rules. Keep these out of the single-column mobile range. */
+@media (min-width: 768px) and (max-width: 900px) {
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-inline: 24px;
+  }
+
+  :where(.classes-grid, .gift-packages-grid, .chef-spotlight-grid, .student-proof-grid,
+    .recipes-vault-grid, .what-you-cook-grid, .corporate-journey-grid,
+    .passport-grid, .option-select-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .classes-grid,
+  .gift-packages-grid,
+  .chef-spotlight-grid,
+  .student-proof-grid,
+  .recipes-vault-grid,
+  .what-you-cook-grid,
+  .corporate-journey-grid,
+  .passport-grid,
+  .option-select-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* iPad Mini & Tablet (2-column grid): center 3rd/last card in 3-card sections */
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :nth-child(3):last-child,
+  :is(
+    .classes-grid,
+    .gift-packages-grid,
+    .chef-spotlight-grid,
+    .student-proof-grid,
+    .recipes-vault-grid,
+    .curriculum-level-grid,
+    .take-home-grid
+  ) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc((100% - 24px) / 2) !important;
+  }
+
+  /* iPad Mini & Tablet: Classes page grid aligned one by one */
+  .page-classes .classes-grid,
+  #classesGridContainer {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  .page-classes .classes-grid > *,
+  #classesGridContainer > * {
+    grid-column: 1 / -1 !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .page-classes .class-card-media,
+  #classesGridContainer .class-card-media {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 380px !important;
+  }
+
+  /* iPad Mini & Tablet: Contact page grids aligned one by one */
+  .page-contact .contact-content-grid,
+  .contact-content-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 3rem !important;
+  }
+
+  .contact-form-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  .contact-form-card,
+  .contact-info-stack {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-map-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .auth-page-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-media-pane {
+    min-height: 300px;
+    padding: 2rem 24px;
+  }
+
+  .auth-form-pane {
+    padding: 4rem 24px 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 68px;
+    --live-strip-height: 62px;
+  }
+
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-inline: 16px;
+  }
+
+  .section {
+    padding-block: 3.5rem;
+  }
+
+  .section-sm {
+    padding-block: 2.5rem;
+  }
+
+  .section-hero {
+    padding-top: calc(var(--header-height) + var(--live-strip-height) + 2rem);
+    padding-bottom: 3.5rem;
+  }
+
+  h1 { font-size: clamp(2.15rem, 10vw, 3rem); }
+  h2 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  h3 { font-size: clamp(1.35rem, 6vw, 1.75rem); }
+
+  .brand-logo,
+  .footer-brand-name {
+    min-height: 38px;
+    gap: 0.6rem;
+  }
+
+  .brand-logo-img {
+    height: 38px;
+    max-width: 44px;
+  }
+
+  .brand-name { font-size: 1.38rem; }
+  .brand-tagline { font-size: 0.52rem; letter-spacing: 0.12em; }
+
+  .live-cooking-strip {
+    padding-inline: 12px;
+    text-align: center;
+  }
+
+  .live-strip-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem 0.45rem;
+    font-size: 0.66rem;
+  }
+
+  .live-strip-content > span:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: calc(100vw - 24px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .live-strip-content .live-indicator {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0.12rem 0.45rem;
+    font-size: 0.62rem;
+  }
+
+  .live-strip-content .seat-pill {
+    grid-column: 2;
+    grid-row: 2;
+    display: inline-flex;
+    white-space: nowrap;
+  }
+
+  .live-strip-content .live-strip-link {
+    grid-column: 3;
+    grid-row: 2;
+    white-space: nowrap;
+  }
+
+  .mobile-drawer {
+    width: min(340px, 92vw);
+    padding: 1.5rem;
+  }
+
+  :where(.classes-grid, .gift-packages-grid, .chef-spotlight-grid, .student-proof-grid,
+    .recipes-vault-grid, .what-you-cook-grid, .corporate-journey-grid,
+    .passport-grid, .option-select-grid, .social-login-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px;
+  }
+
+  .classes-grid,
+  .gift-packages-grid,
+  .chef-spotlight-grid,
+  .student-proof-grid,
+  .recipes-vault-grid,
+  .what-you-cook-grid,
+  .corporate-journey-grid,
+  .passport-grid,
+  .option-select-grid,
+  .social-login-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .moments-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 230px;
+  }
+
+  .moment-1, .moment-2, .moment-3, .moment-4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .footer-bottom,
+  .footer-bottom-links {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filters-bar,
+  .filter-row,
+  .class-card-footer,
+  .session-strip-card,
+  .hero-cta-group {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .filter-row > *,
+  .filter-row select,
+  .filter-row input {
+    max-width: 100%;
+  }
+
+  .auth-media-pane {
+    min-height: 240px;
+    justify-content: flex-end;
+    padding: 1rem 16px;
+  }
+
+  .auth-quote-box {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-md);
+    background-color: rgba(24, 21, 19, 0.76);
+  }
+
+  .auth-quote-text {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .auth-quote-box > div {
+    font-size: 0.7rem !important;
+    line-height: 1.35;
+  }
+
+  .auth-form-pane {
+    padding: 4rem 16px 2.5rem;
+  }
+
+  .auth-top-controls {
+    top: 0.75rem;
+    right: 16px;
+    left: auto;
+    inset-inline-start: auto;
+    inset-inline-end: 16px;
+    z-index: 3;
+  }
+
+  .auth-header {
+    text-align: center;
+  }
+
+  .auth-header .brand-logo {
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+  }
+
+  form > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .form-control,
+  .btn {
+    min-height: 44px;
+  }
+
+  .cta-banner-full,
+  .hero-main-img-card {
+    min-height: 360px;
+  }
+
+  #toast-container {
+    inset-inline: 16px;
+    right: auto;
+    bottom: 16px;
+  }
+
+  .toast { max-width: none; }
+}
+
+@media (max-width: 380px) {
+  .header-container { gap: 0.5rem; }
+  .brand-tagline { letter-spacing: 0.08em; }
+  .mobile-toggle { width: 42px; height: 42px; flex-shrink: 0; }
+}
+/* Consistent native-select arrow spacing across every page and viewport. */
+select:not([multiple]) {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-inline-end: 3rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23C65332' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+[dir="rtl"] select:not([multiple]) {
+  padding-inline-start: 3rem !important;
+  background-position: left 1rem center;
+}
+
