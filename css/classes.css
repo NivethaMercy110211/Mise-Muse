@@ -278,13 +278,13 @@
 
 .class-card-title {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
+  font-size: clamp(1.2rem, 1.45vw, 1.35rem);
   line-height: 1.25;
   color: var(--text-main);
   margin-bottom: 0.75rem;
   display: block;
   width: 100%;
-  max-width: 20ch;
+  max-width: none;
   min-height: 2.5em;
   text-wrap: balance;
 }
@@ -298,8 +298,15 @@
 .class-skill-summary > span {
   display: block;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+@media (max-width: 767px) {
+  .class-card-title a > span,
+  .class-skill-summary > span {
+    white-space: normal;
+  }
 }
 .class-card-title a:hover {
   color: var(--primary);
@@ -311,6 +318,9 @@
   line-height: 1.55;
   margin-bottom: 1.25rem;
   flex-grow: 1;
+  max-width: 40ch;
+  min-height: calc(1.55em * 3);
+  text-wrap: balance;
 }
 
 .class-details-mini {
@@ -783,6 +793,12 @@
   line-height: 1.45;
   text-wrap: balance;
   overflow-wrap: break-word;
+}
+
+.technique-copy > span {
+  display: block;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .technique-bullet {

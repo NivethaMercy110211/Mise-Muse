@@ -176,19 +176,19 @@
                 <div class="technique-item">
                   <span class="technique-bullet">01</span>
                   <div class="technique-copy">
-                    <strong>Gluten Web Hydration:</strong> Calculating 57% hydration ratios across seasonal ambient humidity fluctuations.
+                    <span><strong>Gluten Web Hydration:</strong></span><span>Calculating 57% hydration ratios</span><span>across seasonal humidity shifts.</span>
                   </div>
                 </div>
                 <div class="technique-item">
                   <span class="technique-bullet">02</span>
                   <div class="technique-copy">
-                    <strong>Zero-Stretch Sheeting:</strong> Wood dowel rolling and manual reduction without tearing delicate sheets.
+                    <span><strong>Zero-Stretch Sheeting:</strong></span><span>Wood dowel rolling and reduction</span><span>without tearing delicate sheets.</span>
                   </div>
                 </div>
                 <div class="technique-item">
                   <span class="technique-bullet">03</span>
                   <div class="technique-copy">
-                    <strong>Mantecatura Emulsion:</strong> Starch-binding emulsion physics creating high-gloss sauces without heavy cream.
+                    <span><strong>Mantecatura Emulsion:</strong></span><span>Starch-binding emulsion physics</span><span>for gloss without heavy cream.</span>
                   </div>
                 </div>
               </div>
@@ -372,6 +372,35 @@
   <script>
     // Dynamic query parameter hydration for class-detail
     document.addEventListener('DOMContentLoaded', () => {
+      const balanceTechniqueLines = (text) => {
+        const words = text.trim().split(/\s+/);
+        if (words.length < 3) return [text, '', ''];
+
+        let bestLines = [text, '', ''];
+        let bestScore = Infinity;
+
+        for (let firstBreak = 1; firstBreak < words.length - 1; firstBreak += 1) {
+          for (let secondBreak = firstBreak + 1; secondBreak < words.length; secondBreak += 1) {
+            const lines = [
+              words.slice(0, firstBreak).join(' '),
+              words.slice(firstBreak, secondBreak).join(' '),
+              words.slice(secondBreak).join(' ')
+            ];
+            const lengths = lines.map(line => line.length);
+            const longest = Math.max(...lengths);
+            const shortest = Math.min(...lengths);
+            const score = (longest - shortest) ** 2 + longest;
+
+            if (score < bestScore) {
+              bestScore = score;
+              bestLines = lines;
+            }
+          }
+        }
+
+        return bestLines;
+      };
+
       const params = new URLSearchParams(window.location.search);
       const classId = params.get('id') || 'pasta-lab';
       const cls = window.MiseState.getClassById(classId);
@@ -436,7 +465,7 @@
             techList.innerHTML = cls.techniques.slice(0, 3).map((t, idx) => `
               <div class="technique-item">
                 <span class="technique-bullet">0${idx + 1}</span>
-                <div class="technique-copy">${t}</div>
+                <div class="technique-copy">${balanceTechniqueLines(t).map(line => `<span>${line}</span>`).join('')}</div>
               </div>
             `).join('');
           }

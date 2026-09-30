@@ -6,6 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initClassesPage();
 });
 
+function balanceCardText(text, lineCount) {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= lineCount) {
+    return Array.from({ length: lineCount }, (_, index) => words[index] || '');
+  }
+
+  const prefixLengths = [0];
+  words.forEach(word => prefixLengths.push(prefixLengths[prefixLengths.length - 1] + word.length));
+  const lineLength = (start, end) => prefixLengths[end] - prefixLengths[start] + Math.max(0, end - start - 1);
+  const averageLength = lineLength(0, words.length) / lineCount;
+  let bestLines = [];
+  let bestScore = Infinity;
+
+  const findBreaks = (start, linesLeft, currentLines) => {
+    if (linesLeft === 1) {
+      const finalLines = [...currentLines, words.slice(start).join(' ')];
+      const score = finalLines.reduce((total, line) => total + (line.length - averageLength) ** 2, 0);
+      if (score < bestScore) {
+        bestScore = score;
+        bestLines = finalLines;
+      }
+      return;
+    }
+
+    const lastBreak = words.length - linesLeft + 1;
+    for (let next = start + 1; next < lastBreak; next += 1) {
+      findBreaks(next, linesLeft - 1, [...currentLines, words.slice(start, next).join(' ')]);
+    }
+  };
+
+  findBreaks(0, lineCount, []);
+  return bestLines;
+}
+
 function initClassesPage() {
   const container = document.getElementById('classesGridContainer');
   if (!container || !window.MiseState) return;
@@ -91,9 +125,9 @@ function initClassesPage() {
               <span>${c.duration}</span>
             </div>
             <h3 class="class-card-title">
-              <a href="class-detail.html?id=${c.id}">${c.title}</a>
+              <a href="class-detail.html?id=${c.id}">${balanceCardText(c.title, 2).map(line => `<span>${line}</span>`).join('')}</a>
             </h3>
-            <p class="class-skill-summary">${c.skillSummary}</p>
+            <p class="class-skill-summary">${balanceCardText(c.skillSummary, 3).map(line => `<span>${line}</span>`).join('')}</p>
             
             <div class="class-details-mini">
               <div class="mini-detail-item">

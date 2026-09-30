@@ -55,15 +55,32 @@
 .gift-card-title {
   font-family: var(--font-serif);
   font-size: 1.4rem;
+  line-height: 1.3;
+  min-height: 2.6em;
   margin-bottom: 0.5rem;
   color: var(--text-main);
 }
 
 .gift-card-desc {
   font-size: 0.88rem;
+  line-height: 1.55;
+  min-height: 4.65em;
   color: var(--body-text);
   margin-bottom: 1.25rem;
   flex-grow: 1;
+}
+
+.gift-card-title > span,
+.gift-card-desc > span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .gift-card-title > span,
+  .gift-card-desc > span {
+    white-space: normal;
+  }
 }
 
 .gift-card-features {

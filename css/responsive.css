@@ -357,14 +357,13 @@ iframe {
 
 /* Featured class titles share an exact two-line area for consistent alignment. */
 .class-card .class-card-title {
-  display: -webkit-box;
+  display: block;
   min-height: calc(1.25em * 2);
-  max-height: calc(1.25em * 2);
+  max-height: none;
   line-height: 1.25;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: unset;
 }
 
 :where(.class-card p, .gift-card-desc, .chef-spotlight-card p, .student-proof-card p,
@@ -376,14 +375,13 @@ iframe {
 
 /* Featured class rail: reserve the same three-line copy area on every card. */
 .class-card .class-skill-summary {
-  display: -webkit-box;
+  display: block;
   min-height: calc(1.55em * 3);
-  max-height: calc(1.55em * 3);
+  max-height: none;
   line-height: 1.55;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: unset;
 }
 
 /* Desktop/laptop: readable 3-column content cards. */
