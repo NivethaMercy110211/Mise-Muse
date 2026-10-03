@@ -93,6 +93,10 @@ function initGlobalFooter() {
                 <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.7.5 2.6.6a2 2 0 0 1 2 2.4Z"></path></svg>
                 <span>+1 (555) 382-6873</span>
               </a>
+              <a class="footer-contact-item" href="mailto:hello@miseandmuse.com">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+                <span>hello@miseandmuse.com</span>
+              </a>
             </address>
           </div>
         </div>

@@ -16,6 +16,10 @@
 
 /* Medium Tablets & Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
+  .class-rail-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .main-nav {
     display: none;
   }
@@ -101,6 +105,22 @@
   .auth-media-pane {
     min-height: 360px;
   }
+}
+
+@media (max-width: 600px) {
+  .class-rail-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .class-grid-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .class-grid-nav {
+    margin-inline-start: auto;
+  }
+
 }
 
 /* Mobile & Small Screens (max-width: 767px) */
@@ -371,6 +391,23 @@ iframe {
   overflow: visible;
   text-overflow: clip;
   -webkit-line-clamp: unset;
+}
+
+/* Keep testimonial copy in one shared four-line row across each grid. */
+.student-proof-card .proof-quote {
+  min-height: calc(1.35em * 4);
+  height: calc(1.35em * 4);
+  max-height: calc(1.35em * 4);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1101px) {
+  .student-proof-card .proof-quote {
+    min-height: calc(1.35em * 3);
+    height: calc(1.35em * 3);
+    max-height: calc(1.35em * 3);
+  }
 }
 
 /* Featured class rail: reserve the same three-line copy area on every card. */
@@ -736,12 +773,25 @@ iframe {
   }
 
   #toast-container {
-    inset-inline: 16px;
-    right: auto;
-    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: auto;
+    max-width: calc(100vw - 32px);
+    align-items: stretch;
   }
 
-  .toast { max-width: none; }
+  .toast {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0.9rem 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .toast > span {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 380px) {
@@ -765,3 +815,168 @@ select:not([multiple]) {
   background-position: left 1rem center;
 }
 
+/* Schedule: compact, ordered mobile cards with no inherited desktop grid tracks. */
+@media (max-width: 767px) {
+  .schedule-workspace .container,
+  .schedule-controls,
+  .sessions-list-wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .schedule-controls {
+    align-items: stretch;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .view-toggle-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    border-radius: var(--radius-lg);
+  }
+
+  .view-toggle-btn {
+    min-width: 0;
+    min-height: 48px;
+    padding: 0.65rem 0.5rem;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .schedule-status-legend {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .schedule-status-legend .status-key,
+  .schedule-status-legend .status-key + .status-key {
+    padding: 0;
+    border: 0;
+  }
+
+  .sessions-list-wrap {
+    gap: 1.25rem;
+  }
+
+  .session-strip-card {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 1rem !important;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
+    padding: 1rem !important;
+    overflow: hidden;
+    text-align: start !important;
+  }
+
+  .session-strip-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .session-strip-card > .session-date-box {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: stretch !important;
+    width: 84px !important;
+    max-width: 84px !important;
+    min-width: 0;
+    padding: 0.75rem 0.45rem !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+  }
+
+  .session-date-time {
+    white-space: normal !important;
+    line-height: 1.35;
+  }
+
+  .session-strip-card > .session-info-main {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    align-self: center;
+    text-align: start !important;
+  }
+
+  .session-strip-card .session-title {
+    margin: 0;
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+    text-align: start !important;
+    overflow-wrap: anywhere;
+  }
+
+  .session-strip-card .session-chef-meta {
+    text-align: start !important;
+    overflow-wrap: anywhere;
+  }
+
+  .session-strip-card > div:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    min-width: 0;
+  }
+
+  .session-strip-card .difficulty-pill {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .session-strip-card > .capacity-indicator {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+
+  .session-strip-card .capacity-stats {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .session-strip-card .capacity-stats .seat-pill {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .session-strip-card > div:last-child {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0 !important;
+    text-align: start !important;
+  }
+
+  .session-strip-card > div:last-child > div {
+    margin: 0 !important;
+  }
+
+  .session-strip-card > div:last-child .btn {
+    width: auto;
+    max-width: 70%;
+    white-space: nowrap;
+  }
+}

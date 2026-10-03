@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/editorial.css?v=9">
+  <link rel="stylesheet" href="css/editorial.css?v=10">
   <link rel="stylesheet" href="css/classes.css?v=2">
   <link rel="stylesheet" href="css/schedule.css">
   <link rel="stylesheet" href="css/booking.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/dark-theme.css?v=2">
+  <link rel="stylesheet" href="css/dark-theme.css?v=3">
   <link rel="stylesheet" href="css/rtl.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -96,10 +96,10 @@
 
   <main>
     <!-- HOME 2 HERO: THE CULINARY JOURNEY -->
-    <section class="section section-hero hero-editorial banner-hero" style="--banner-image: url('../assets/banners/journey-hero.webp');">
+    <section class="section section-hero journey-hero" style="--banner-image: url('../assets/banners/journey-hero.webp');">
       <div class="container">
-        <div class="hero-grid hero-single-banner">
-          <div class="hero-content hero-blur-grid">
+        <div class="journey-hero-layout">
+          <div class="hero-content journey-hero-copy">
             <span class="section-eyebrow">The Skills Methodology</span>
             <h1 class="hero-title">Not Just Recipes. <em>Real Kitchen Skills.</em></h1>
             <p class="hero-lead">
@@ -110,7 +110,15 @@
               <a href="schedule.html" class="btn btn-outline btn-lg">View This Month’s Schedule</a>
             </div>
           </div>
-
+          <aside class="journey-path-card" aria-label="Your culinary learning path">
+            <span class="journey-path-kicker">Your Learning Path</span>
+            <ol class="journey-path-list">
+              <li><span>01</span><div><strong>Foundation</strong><small>Knife craft &amp; heat control</small></div></li>
+              <li><span>02</span><div><strong>Confidence</strong><small>Flavor balance &amp; intuition</small></div></li>
+              <li><span>03</span><div><strong>Mastery</strong><small>Technique-led creativity</small></div></li>
+            </ol>
+            <a href="#curriculum" class="journey-path-link">Explore the curriculum <span aria-hidden="true">&darr;</span></a>
+          </aside>
         </div>
       </div>
     </section>
@@ -160,7 +168,7 @@
     </section>
 
     <!-- 02 — BEGINNER TO ADVANCED JOURNEY -->
-    <section class="section">
+    <section class="section" id="curriculum">
       <div class="container">
         <div class="section-header text-center">
           <span class="section-eyebrow">Curriculum Matrix</span>
@@ -256,7 +264,139 @@
       </div>
     </section>
 
-    <!-- 04 — FINAL CTA -->
+    <!-- 04 — STUDIO STATS & SATISFACTION (Visual Photo-Stat Grid) -->
+    <section class="section" id="studioStatsSection">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">By the Numbers</span>
+          <h2>Real Studio Impact &amp; Satisfaction</h2>
+          <p class="section-subtitle">Real results from our hands-on island cooking stations.</p>
+        </div>
+
+        <div class="stat-photo-grid">
+          <!-- Card 1 -->
+          <article class="stat-photo-card">
+            <div class="stat-photo-media">
+              <img src="images/classes/pasta-lab.jpg" alt="Student hands shaping artisanal pasta" loading="lazy">
+              <div class="stat-photo-overlay"></div>
+            </div>
+            <div class="stat-photo-content">
+              <span class="stat-tag">Alumni</span>
+              <span class="stat-value">14K+</span>
+              <h3 class="stat-label">Home Cooks Mentored</h3>
+              <span class="stat-subtext">Across 5 global cuisines</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="stat-photo-card">
+            <div class="stat-photo-media">
+              <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop" alt="Small cohort cooking at central island with chef mentor" loading="lazy">
+              <div class="stat-photo-overlay"></div>
+            </div>
+            <div class="stat-photo-content">
+              <span class="stat-tag">Mentorship</span>
+              <span class="stat-value">4 : 1</span>
+              <h3 class="stat-label">Student-to-Chef Ratio</h3>
+              <span class="stat-subtext">Intimate station guidance</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="stat-photo-card">
+            <div class="stat-photo-media">
+              <img src="images/classes/artisan-sourdough.jpg" alt="Golden open-crumb artisan sourdough bread" loading="lazy">
+              <div class="stat-photo-overlay"></div>
+            </div>
+            <div class="stat-photo-content">
+              <span class="stat-tag">Satisfaction</span>
+              <span class="stat-value">99.4%</span>
+              <h3 class="stat-label">Student Satisfaction</h3>
+              <span class="stat-subtext">★ 4.98 / 5 across 3,200+ reviews</span>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="stat-photo-card">
+            <div class="stat-photo-media">
+              <img src="images/skills/thermal-searing.jpg" alt="High heat searing in skillet with foaming butter" loading="lazy">
+              <div class="stat-photo-overlay"></div>
+            </div>
+            <div class="stat-photo-content">
+              <span class="stat-tag">Practice</span>
+              <span class="stat-value">100%</span>
+              <h3 class="stat-label">Active Hands-On Time</h3>
+              <span class="stat-subtext">Zero spectator mode</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — FROM THE STATIONS (Asymmetric Visual Image Grid) -->
+    <section class="section bg-surface" id="journeyMomentsSection">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Documentary Gallery</span>
+          <h2>Technique in Every Frame</h2>
+          <p class="section-subtitle">Candid moments captured across our cooking stations and Saturday ateliers.</p>
+        </div>
+
+        <div class="journey-gallery-grid">
+          <!-- Tile 1 -->
+          <div class="journey-gallery-item j-item-1">
+            <img src="images/skills/knife-technique.jpg" alt="Chef demonstrating pinch grip knife technique with julienned vegetables" class="journey-gallery-img" loading="lazy">
+            <div class="journey-gallery-gradient"></div>
+            <div class="journey-gallery-caption">
+              <span class="journey-gallery-badge">Knife Ergonomics &amp; Slice Speed</span>
+              <span class="journey-gallery-station">Station 01 · Knife Skills</span>
+            </div>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="journey-gallery-item j-item-2">
+            <img src="images/classes/spice-technique.jpg" alt="Whole spice roasting and tempering in heavy cookware" class="journey-gallery-img" loading="lazy">
+            <div class="journey-gallery-gradient"></div>
+            <div class="journey-gallery-caption">
+              <span class="journey-gallery-badge">Spice Tempering &amp; Bloom</span>
+              <span class="journey-gallery-station">Station 02 · Flavor Chemistry</span>
+            </div>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="journey-gallery-item j-item-3">
+            <img src="images/classes/neapolitan-pizza.jpg" alt="Wood fired dough blistering with melted mozzarella and fresh basil" class="journey-gallery-img" loading="lazy">
+            <div class="journey-gallery-gradient"></div>
+            <div class="journey-gallery-caption">
+              <span class="journey-gallery-badge">Leopard Crust &amp; High Heat</span>
+              <span class="journey-gallery-station">Station 03 · Hearth &amp; Dough</span>
+            </div>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="journey-gallery-item j-item-4">
+            <img src="images/classes/french-sauces.jpg" alt="Classic French reduction sauce with glossy emulsified finish" class="journey-gallery-img" loading="lazy">
+            <div class="journey-gallery-gradient"></div>
+            <div class="journey-gallery-caption">
+              <span class="journey-gallery-badge">Velvety Emulsions &amp; Glazes</span>
+              <span class="journey-gallery-station">Station 04 · Pan Science</span>
+            </div>
+          </div>
+
+          <!-- Tile 5 -->
+          <div class="journey-gallery-item j-item-5">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop" alt="Saturday evening guests toasting with wine around the long walnut dinner table" class="journey-gallery-img" loading="lazy">
+            <div class="journey-gallery-gradient"></div>
+            <div class="journey-gallery-caption">
+              <span class="journey-gallery-badge">Saturday Atelier &amp; Long Table Feast</span>
+              <span class="journey-gallery-station">Communal Gathering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — FINAL CTA -->
     <section class="container">
       <div class="cta-banner-full" role="img" aria-label="Guests cooking together during an energetic culinary workshop" style="background-image: url('assets/banners/journey-cta.webp'); --banner-image: url('assets/banners/journey-cta.webp');">
         <div class="cta-overlay"></div>

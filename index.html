@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/editorial.css?v=6">
+  <link rel="stylesheet" href="css/editorial.css?v=8">
   <link rel="stylesheet" href="css/classes.css?v=2">
   <link rel="stylesheet" href="css/schedule.css">
   <link rel="stylesheet" href="css/booking.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/dark-theme.css">
   <link rel="stylesheet" href="css/rtl.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/responsive.css?v=2">
 </head>
 <body class="texture-grain">
 
@@ -146,13 +146,19 @@
             <h2>What’s Cooking This Week</h2>
             <p class="section-subtitle">Real-time seat availability across our intimate small-group culinary ateliers.</p>
           </div>
-          <a href="classes.html" class="btn-link-editorial">
-            View Complete Experience Catalog
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
+          <div class="class-grid-header-actions">
+            <a href="classes.html" class="btn-link-editorial">
+              View Complete Experience Catalog
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <div class="class-grid-nav" aria-label="Browse weekly classes">
+              <button class="class-grid-nav-btn class-grid-prev" type="button" aria-label="Previous class">&#8592;</button>
+              <button class="class-grid-nav-btn class-grid-next" type="button" aria-label="Next class">&#8594;</button>
+            </div>
+          </div>
         </div>
 
-        <div class="class-rail-wrap">
+        <div class="class-rail-wrap" aria-label="This week's cooking classes">
           <div class="class-rail-track">
             <!-- Card 1 -->
             <div class="rail-card">
@@ -273,6 +279,37 @@
                       <span class="price-unit">per guest</span>
                     </div>
                     <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('bangkok-street-lab')">Book Class</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="rail-card">
+              <article class="class-card">
+                <div class="class-card-media">
+                  <img src="images/classes/french-sauces.jpg" alt="Modern French sauces and pan roasting" class="class-card-img">
+                  <div class="class-card-badges">
+                    <span class="seat-pill status-available">4 seats left</span>
+                    <span class="difficulty-pill" data-level="SKILLED">
+                      <span class="difficulty-bars"><span class="difficulty-bar"></span><span class="difficulty-bar"></span><span class="difficulty-bar"></span></span>
+                      Skilled
+                    </span>
+                  </div>
+                </div>
+                <div class="class-card-body">
+                  <div class="class-card-meta-top">
+                    <span class="class-cuisine-tag">Continental</span>
+                    <span>4.0 Hours</span>
+                  </div>
+                  <h3 class="class-card-title"><a href="class-detail.html?id=french-sauce-craft"><span>Modern French Sauces &amp;</span><span>Pan Roasting</span></a></h3>
+                  <p class="class-skill-summary"><span>Classic fond reduction, clarified</span><span>butter emulsions, velout&eacute;, and</span><span>dry-aged sear precision.</span></p>
+                  <div class="class-card-footer">
+                    <div class="class-price">
+                      <span class="price-amount">$170</span>
+                      <span class="price-unit">per guest</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="window.openBookingModal('french-sauce-craft')">Book Class</button>
                   </div>
                 </div>
               </article>
@@ -624,7 +661,7 @@
               <img src="assets/students/student-curry.jpg" alt="Student coastal curry with dhungar charcoal smoke and garlic naan" class="proof-img" loading="lazy">
             </div>
             <div class="proof-body">
-              <p class="proof-quote">“The dhungar charcoal smoke technique blew our minds. An unforgettable date night experience.”</p>
+              <p class="proof-quote">“The dhungar charcoal smoke technique blew our minds. An unforgettable date night experience, from the first aroma to the final bite.”</p>
               <div class="proof-author">
                 <strong>Marcus & Claire</strong>
                 <span>Spice & Charcoal</span>

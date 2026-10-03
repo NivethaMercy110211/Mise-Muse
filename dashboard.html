@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/editorial.css?v=3">
   <link rel="stylesheet" href="css/classes.css?v=2">
-  <link rel="stylesheet" href="css/dashboard.css?v=5">
+  <link rel="stylesheet" href="css/forms.css?v=2">
+  <link rel="stylesheet" href="css/dashboard.css?v=9">
   <link rel="stylesheet" href="css/schedule.css">
   <link rel="stylesheet" href="css/booking.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -44,8 +45,6 @@
       </a>
 
       <div class="header-actions">
-        <button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button>
-        <button class="control-btn rtl-toggle-btn" type="button">RTL</button>
         <div class="dashboard-account">
           <button class="dashboard-account-trigger" type="button" aria-expanded="false" aria-controls="dashboardAccountMenu">
             <span class="chip-avatar student-avatar-text">EV</span>
@@ -82,15 +81,9 @@
         <button class="dash-nav-item" data-tab="tabPassport"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2Z"></path><path d="M8 3v18M11 8h5M11 12h5"></path></svg>Taste Passport</button>
         <button class="dash-nav-item" data-tab="tabRecipeVault"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>Recipe Vault</button>
         <button class="dash-nav-item" data-tab="tabAccount"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Account Profile</button>
-        <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.38.27.76.6 1 .99.24.4.4.85.4 1.31v.1h.1v1.2h-.1c0 .46-.16.91-.4 1.31-.24.4-.62.72-1 .99Z"></path></svg>Settings</button>
+        <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06-.06A1.7 1.7 0 0 0 19.4 9c.38.27.76.6 1 .99.24.4.4.85.4 1.31v.1h.1v1.2h-.1c0 .46-.16.91-.4 1.31-.24.4-.62.72-1 .99Z"></path></svg>Settings</button>
         <button type="button" class="dash-nav-item dashboard-signout" data-logout-trigger><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5"></path><path d="m16 16 4-4-4-4M20 12H9"></path></svg>Log Out</button>
       </nav>
-    </div>
-    <div class="drawer-footer dashboard-drawer-footer">
-      <div class="drawer-controls">
-        <button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button>
-        <button class="control-btn rtl-toggle-btn" type="button">RTL</button>
-      </div>
     </div>
   </div>
 
@@ -108,7 +101,7 @@
             <button class="dash-nav-item" data-tab="tabPassport"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2Z"></path><path d="M8 3v18M11 8h5M11 12h5"></path></svg>Taste Passport</button>
             <button class="dash-nav-item" data-tab="tabRecipeVault"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>Recipe Vault</button>
             <button class="dash-nav-item" data-tab="tabAccount"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Account Profile</button>
-            <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-5L9 6a7 7 0 0 0-1.7 1L5 6 3 9.5 5 11a7 7 0 0 0 0 2l-2 1.5L5 18l2.3-1a7 7 0 0 0 1.7 1l.5 3h5l.5-3a7 7 0 0 0 1.7-1l2.3 1 2-3.5-2-1.5a7 7 0 0 0 .1-1Z"></path></svg>Preferences &amp; Settings</button>
+            <button class="dash-nav-item" data-tab="tabSettings"><svg class="ui-icon dash-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-5L9 6a7 7 0 0 0-1.7 1L5 6 3 9.5 5 11a7 7 0 0 0 0 2l-2 1.5L5 18l2.3-1a7 7 0 0 0 1.7 1l.5 3h5l.5-3a7 7 0 0 0 1.7-1l2.3 1 2-3.5-2-1.5a7 7 0 0 0 .1-1Z"></path></svg>Settings</button>
           </nav>
           <div class="dashboard-sidebar-note"><strong>Next session</strong><span>Saturday · 6:00 PM</span></div>
           <button type="button" class="dashboard-logout-button" data-logout-trigger>
@@ -496,7 +489,7 @@
   <script src="js/state.js"></script>
   <script src="js/navigation.js?v=3"></script>
   <script src="js/booking-modal.js"></script>
-  <script src="js/dashboard.js?v=4"></script>
+  <script src="js/dashboard.js?v=7"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

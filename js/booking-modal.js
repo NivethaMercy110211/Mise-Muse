@@ -81,7 +81,7 @@ class BookingModalManager {
 
               <div class="form-group" style="margin-top:1.5rem;">
                 <label class="form-label">Dietary & Allergy Requirements</label>
-                <input type="text" class="form-control" id="modalDietary" placeholder="e.g. Nut allergy, pescatarian, gluten-free preference...">
+                <input type="text" class="form-control" id="modalDietary" placeholder="e.g. Nut allergy or dietary preference">
               </div>
             </div>
 
@@ -260,6 +260,8 @@ END:VCALENDAR`;
     const prevBtn = document.getElementById('btnPrevStep');
     const nextBtn = document.getElementById('btnNextStep');
     const footerNav = document.getElementById('modalFooterNav');
+    const modalBody = document.querySelector('.booking-modal-body');
+    if (modalBody) modalBody.scrollTop = 0;
 
     if (this.currentStep === 1) {
       prevBtn.style.visibility = 'hidden';

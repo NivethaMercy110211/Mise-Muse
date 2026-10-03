@@ -818,6 +818,13 @@
   border-color: var(--border-color);
 }
 
+[data-theme="dark"] .size-display-badge {
+  background-color: #F6C7B8;
+  color: #43170E;
+  border-color: #E77A58;
+  box-shadow: 0 6px 18px rgba(223, 121, 88, 0.28);
+}
+
 [data-theme="dark"] .gift-card-preview-wrap {
   background: linear-gradient(135deg, #1C1714 0%, #2E2520 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -920,6 +927,14 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+[data-theme="dark"] .footer-socials a:hover,
+[data-theme="dark"] .footer-socials a:focus-visible {
+  color: #241714;
+  background: #FFA588;
+  border-color: #FFA588;
+  box-shadow: 0 0 0 3px rgba(255, 165, 136, 0.24);
+}
+
 [data-theme="dark"] .footer-nav-title {
   color: #FFF9F1;
 }
@@ -943,4 +958,25 @@
 
 [data-theme="dark"] .texture-grain::after {
   background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 0);
+}
+
+/* Home 2 Image Grids in Dark Mode */
+[data-theme="dark"] .stat-photo-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .stat-photo-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--primary);
+}
+
+[data-theme="dark"] .journey-gallery-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] .journey-gallery-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75);
 }

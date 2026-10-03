@@ -212,6 +212,13 @@
   gap: 0.75rem;
 }
 
+/* Keep text actions level with the fixed-size theme and direction controls. */
+.header-actions > .btn {
+  height: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
 .student-profile-chip {
   display: inline-flex;
   align-items: center;

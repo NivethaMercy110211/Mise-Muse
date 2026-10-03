@@ -24,6 +24,9 @@ function initDashboard() {
     const activePane = document.getElementById(target);
     if (activePane) {
       activePane.classList.add('active');
+      if (target === 'tabRecipeVault') {
+        requestAnimationFrame(() => requestAnimationFrame(fitRecipeVaultText));
+      }
     }
     closeDashboardDrawer();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,6 +57,7 @@ function initDashboard() {
   renderPastClasses(student);
   renderMyBookingsList(student);
   initAccountAndSettings(student);
+  window.initPasswordToggles?.();
   initLogoutConfirmation();
 
   // Re-render when state changes
@@ -286,10 +290,10 @@ function renderMyBookingsList(student) {
       <div>
         <span class="seat-pill status-available">Confirmed ✓</span>
       </div>
-      <div style="font-size:0.85rem; color:var(--body-muted);">
+      <div class="booking-location" style="font-size:0.85rem; color:var(--body-muted);">
         ${b.studio}
       </div>
-      <div style="text-align:right;">
+      <div class="booking-action" style="text-align:right;">
         <a href="confirmation.html?ref=${b.id}" class="btn btn-outline btn-xs">Workstation Pass</a>
       </div>
     </div>
@@ -340,6 +344,50 @@ function renderRecipeVault(student) {
       </div>
     </article>
   `).join('');
+
+  requestAnimationFrame(fitRecipeVaultText);
+  if (!grid.dataset.textFitBound) {
+    grid.dataset.textFitBound = 'true';
+    let resizeFrame;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(fitRecipeVaultText);
+    });
+  }
+}
+
+function fitRecipeVaultText() {
+  document.querySelectorAll('#recipeVaultGrid .recipe-title').forEach(title => {
+    fitTextToLines(title, 1, 11);
+  });
+
+}
+
+function fitTextToLines(element, maximumLines, minimumFontSize) {
+  element.style.fontSize = '';
+  element.style.height = 'auto';
+  element.style.whiteSpace = maximumLines === 1 ? 'nowrap' : 'normal';
+
+  let fontSize = Number.parseFloat(getComputedStyle(element).fontSize);
+  const fits = () => {
+    const styles = getComputedStyle(element);
+    if (maximumLines === 1) return element.scrollWidth <= element.clientWidth + 1;
+
+    const lineHeight = Number.parseFloat(styles.lineHeight);
+    const padding = Number.parseFloat(styles.paddingTop) + Number.parseFloat(styles.paddingBottom);
+    return element.scrollHeight - padding <= (lineHeight * maximumLines) + 1;
+  };
+
+  while (!fits() && fontSize > minimumFontSize) {
+    fontSize = Math.max(minimumFontSize, fontSize - 0.25);
+    element.style.fontSize = `${fontSize}px`;
+  }
+
+  const finalStyles = getComputedStyle(element);
+  const finalLineHeight = Number.parseFloat(finalStyles.lineHeight);
+  const verticalPadding = Number.parseFloat(finalStyles.paddingTop) + Number.parseFloat(finalStyles.paddingBottom);
+  const verticalBorders = Number.parseFloat(finalStyles.borderTopWidth) + Number.parseFloat(finalStyles.borderBottomWidth);
+  element.style.height = `${Math.ceil((finalLineHeight * maximumLines) + verticalPadding + verticalBorders)}px`;
 }
 
 function renderChefNotes(student) {
