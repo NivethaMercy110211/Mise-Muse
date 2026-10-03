@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNavigation();
   initLiveStrip();
   initStickyHeader();
+  initAuthPageControls();
   initThemeToggle();
   initRtlToggle();
   initMobileDrawer();
@@ -19,6 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAuthHeaderControls();
   });
 });
+
+function initAuthPageControls() {
+  const authPane = document.querySelector('.auth-form-pane');
+  if (!authPane || authPane.querySelector('.auth-top-controls')) return;
+
+  const controls = document.createElement('div');
+  controls.className = 'auth-top-controls';
+  controls.setAttribute('aria-label', 'Display controls');
+  controls.innerHTML = `
+    <button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button>
+    <button class="control-btn rtl-toggle-btn" type="button" aria-label="Switch to right-to-left layout">RTL</button>
+  `;
+  authPane.prepend(controls);
+}
 
 function syncResponsiveMenuNames() {
   const menuItems = [
