@@ -323,7 +323,7 @@
 /* ============================================================
    Interior-page banners — all non-home pages.
    Height: clamp(400px, 55vh, 620px)  (matches About page).
-   Content: LEFT-aligned, max 560 px, 2-line description.
+   Content: center-aligned, max 680 px, 2-line description.
    ============================================================ */
 .banner-hero.banner-hero-page {
   /* Fixed height — identical on every inner page, regardless of content */
@@ -356,15 +356,17 @@
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   /* Push content below the fixed header+strip */
   padding-top: calc(var(--header-height, 64px) + var(--live-strip-height, 36px));
 }
 
 .banner-hero-copy {
-  max-width: 560px;
-  text-align: left;
+  width: min(100%, 680px);
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
   padding: clamp(1.5rem, 3vw, 2.5rem) 0;
 }
 
@@ -430,7 +432,7 @@
 
 .banner-hero-copy .hero-cta-group {
   margin-top: 1.25rem;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .banner-hero-copy .btn-outline {
@@ -457,7 +459,7 @@
   .banner-hero.banner-hero-page > .container {
     padding-top: calc(var(--header-height, 60px) + var(--live-strip-height, 32px));
     min-height: 430px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .banner-hero-copy {
@@ -1648,7 +1650,7 @@
 }
 
 .about-studio-gallery {
-  padding-top: 0;
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
 }
 
 .studio-architecture-grid {

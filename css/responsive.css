@@ -595,13 +595,17 @@ iframe {
 
   .brand-logo,
   .footer-brand-name {
-    min-height: 38px;
+    min-height: 40px;
     gap: 0.6rem;
   }
 
   .brand-logo-img {
-    height: 38px;
+    height: 40px;
     max-width: 44px;
+  }
+
+  .site-header {
+    --header-item-height: 40px;
   }
 
   .brand-name { font-size: 1.38rem; }
@@ -797,7 +801,7 @@ iframe {
 @media (max-width: 380px) {
   .header-container { gap: 0.5rem; }
   .brand-tagline { letter-spacing: 0.08em; }
-  .mobile-toggle { width: 42px; height: 42px; flex-shrink: 0; }
+  .mobile-toggle { width: 40px; height: 40px; flex-shrink: 0; }
 }
 /* Consistent native-select arrow spacing across every page and viewport. */
 select:not([multiple]) {

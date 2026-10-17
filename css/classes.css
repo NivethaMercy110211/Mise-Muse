@@ -443,6 +443,20 @@
   min-height: 440px;
 }
 
+/* Interior class-detail hero content follows the centered inner-page pattern. */
+.page-class-detail .class-hero-content {
+  text-align: center;
+}
+
+.page-class-detail .class-hero-content .lead {
+  margin-inline: auto;
+}
+
+.page-class-detail .class-hero-badges,
+.page-class-detail .class-hero-meta-bar {
+  justify-content: center;
+}
+
 /* Hero Content High-Contrast Visibility */
 .class-hero h1,
 .class-hero h1#heroDetailTitle {

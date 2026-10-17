@@ -48,6 +48,14 @@ function syncResponsiveMenuNames() {
     ['dashboard.html', 'Dashboard']
   ];
 
+  // Keep one navigation hierarchy across every public-page header.
+  document.querySelectorAll('.main-nav').forEach(nav => {
+    nav.setAttribute('aria-label', 'Main navigation');
+    nav.innerHTML = menuItems
+      .map(([href, label]) => `<a href="${href}" class="nav-link">${label}</a>`)
+      .join('');
+  });
+
   // Every responsive drawer uses the same labels and order as the desktop menu.
   document.querySelectorAll('.drawer-nav').forEach(nav => {
     nav.setAttribute('aria-label', 'Mobile navigation');
@@ -174,7 +182,7 @@ function initActiveNavigation() {
 // Keep the same public-page actions regardless of saved student session state.
 function renderAuthHeaderControls() {
   const actionsContainer = document.querySelector('.header-actions');
-  if (!actionsContainer || !window.MiseState) return;
+  if (!actionsContainer) return;
 
   // The student portal has its own compact account control and dashboard drawer.
   if (document.body.classList.contains('dashboard-page')) {
@@ -183,8 +191,7 @@ function renderAuthHeaderControls() {
   }
 
   const authButtonsHtml = `
-    <a href="dashboard.html" class="btn btn-primary btn-sm" id="btnHeaderMyClasses">Dashboard</a>
-    <a href="login.html" class="btn btn-outline btn-sm header-login-btn">Login</a>
+    <a href="login.html" class="btn btn-primary btn-sm header-login-btn">Login</a>
   `;
 
   // Preserve theme, RTL, and mobile toggle controls
@@ -392,7 +399,7 @@ function initMobileDrawer() {
       drawer.insertAdjacentHTML('beforeend', '<div class="drawer-footer"></div>');
       drawerFooter = drawer.querySelector('.drawer-footer');
     }
-    drawerFooter.innerHTML = '<a href="login.html" class="btn btn-outline btn-sm">Login</a><div class="drawer-controls"><button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button><button class="control-btn rtl-toggle-btn" type="button">RTL</button></div>';
+    drawerFooter.innerHTML = '<a href="login.html" class="btn btn-primary btn-sm">Login</a><div class="drawer-controls"><button class="control-btn theme-toggle-btn" type="button" aria-label="Toggle theme"></button><button class="control-btn rtl-toggle-btn" type="button">RTL</button></div>';
     initThemeToggle();
     initRtlToggle();
   }
